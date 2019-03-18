@@ -1,5 +1,6 @@
 import replace from 'rollup-plugin-replace';
 import typescript from 'rollup-plugin-typescript2';
+import sass from 'rollup-plugin-sass';
 
 export default {
   input: 'src/index.tsx',
@@ -8,7 +9,10 @@ export default {
       tsconfig: 'tsconfig.json',
       exclude: ['*.d.ts', 'stories'],
     }),
-    replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    sass(),
   ],
   output: {
     sourcemap: true,

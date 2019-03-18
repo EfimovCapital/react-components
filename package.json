@@ -64,6 +64,7 @@
     "enzyme-adapter-react-16": "^1.11.2",
     "gh-pages": "2.0.1",
     "light-ts-loader": "1.1.2",
+    "node-sass": "^4.11.0",
     "npm-run-all": "4.1.5",
     "react": "^16.8.4",
     "react-docgen-typescript-loader": "^3.0.1",
@@ -76,8 +77,10 @@
     "rollup-plugin-node-globals": "1.4.0",
     "rollup-plugin-node-resolve": "3.3.0",
     "rollup-plugin-replace": "2.1.0",
+    "rollup-plugin-sass": "^1.1.0",
     "rollup-plugin-typescript2": "0.15.0",
     "rollup-watch": "4.3.1",
+    "sass-loader": "^7.1.0",
     "sinon": "^7.2.7",
     "tslint": "^5.12.1",
     "tslint-microsoft-contrib": "^6.0.0",
@@ -87,5 +90,7 @@
   "files": [
     "lib"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "immutable": "^4.0.0-rc.12"
+  }
 }
