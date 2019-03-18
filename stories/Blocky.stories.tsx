@@ -4,11 +4,11 @@ import {
     storiesOf
 } from "@storybook/react";
 
+import { Blocky } from "../src/index";
+
 import "./styles.css";
 
-import { Blocky } from "../src/Blocky";
-
-const blocky = storiesOf("Blocky", module);
+export const blocky = storiesOf("Blocky", module);
 
 blocky.add("Basic blocky", () => {
     return <Blocky address="0x01234" />;
