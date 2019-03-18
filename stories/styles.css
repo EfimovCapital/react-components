@@ -1,0 +1,38 @@
+html {
+    font-family: "Nunito Sans",
+        -apple-system,
+        ".SFNSText-Regular",
+        "San Francisco",
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+#story-root {
+    padding-bottom: 100px;
+}
+
+h1 {
+    margin-right: 20px !important;
+    font-size: 25px !important;
+    display: inline !important;
+}
+
+body {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+h2 {
+    display: inline !important;
+    color: #999 !important;
+}
+
+pre {
+    overflow-x: hidden !important;
+    padding: 20px !important;
+    background: #eee !important;
+}
