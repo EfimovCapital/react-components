@@ -1,13 +1,9 @@
-Ren React Components
+# Ren React Components
 
 [Live storybook](https://republicprotocol.github.io/ren-react-ts/stories)
 
-## TODO
+## Test locally
 
-Replace with Rollup with the default create-react-app setup, or webpack (which is already used by Storybook).
-
-## Test
-
-``` sh
-yarn test
+```sh
+yarn run storybook
 ```
