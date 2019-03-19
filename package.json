@@ -18,10 +18,10 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "deploy": "npm run build-storybook && gh-pages -d docs"
+    "build-storybook": "build-storybook -o docs/storybook",
+    "predeploy": "npm run build-storybook",
+    "deploy": "gh-pages -d docs"
   },
   "dependencies": {
     "immutable": "^4.0.0-rc.12"

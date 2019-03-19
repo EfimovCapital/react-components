@@ -14,7 +14,6 @@ export class Console extends React.Component<Props, State> {
     public render = (): JSX.Element => {
         return (
             <div role="log" className="console">
-                <p>Testing!!!</p>
                 {this.props.logs}
                 <br className="console--bottom" ref={this.updateBottomElement} />
             </div>);

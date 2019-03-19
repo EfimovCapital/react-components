@@ -1,6 +1,6 @@
 # Ren React Components
 
-[Live storybook](https://republicprotocol.github.io/ren-react-ts/stories)
+[Live storybook](https://republicprotocol.github.io/ren-react-ts/storybook)
 
 ## Test locally
 
