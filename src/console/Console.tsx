@@ -13,7 +13,8 @@ export class Console extends React.Component<Props, State> {
 
     public render = (): JSX.Element => {
         return (
-            <div role="log" className="console" onClick={this.onClickHandler}>
+            <div role="log" className="console">
+                <p>Testing!!!</p>
                 {this.props.logs}
                 <br className="console--bottom" ref={this.updateBottomElement} />
             </div>);
@@ -35,13 +36,6 @@ export class Console extends React.Component<Props, State> {
             if (this.bottomElement) {
                 this.bottomElement.scrollIntoView({ behavior: "smooth" });
             }
-        });
-    }
-
-    private readonly onClickHandler = (_event: React.MouseEvent<HTMLElement>): void => {
-        const { level } = this.state;
-        this.setState({
-            level: level + 1,
         });
     }
 }
