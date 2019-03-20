@@ -17,10 +17,10 @@
     "test:watch": "react-scripts-ts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build",
+    "prepare": "$npm_execpath run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs/storybook",
-    "predeploy": "yarn run build-storybook",
+    "predeploy": "$npm_execpath run build-storybook",
     "deploy": "gh-pages -d docs"
   },
   "dependencies": {
