@@ -21,8 +21,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs/storybook",
     "predeploy": "yarn run build-storybook",
-    "deploy": "gh-pages -d docs",
-    "postinstall": "yarn run build"
+    "deploy": "gh-pages -d docs"
   },
   "dependencies": {
     "immutable": "^4.0.0-rc.12"
