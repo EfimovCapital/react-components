@@ -36,3 +36,7 @@ pre {
     padding: 20px !important;
     background: #eee !important;
 }
+
+.storybook-readme-story>div {
+    display: inherit !important;
+}

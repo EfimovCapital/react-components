@@ -20,8 +20,9 @@
     "prepare": "yarn run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs/storybook",
-    "predeploy": "npm run build-storybook",
-    "deploy": "gh-pages -d docs"
+    "predeploy": "yarn run build-storybook",
+    "deploy": "gh-pages -d docs",
+    "postinstall": "yarn run build"
   },
   "dependencies": {
     "immutable": "^4.0.0-rc.12"
@@ -38,19 +39,21 @@
     "@storybook/addons": "^5.0.2",
     "@storybook/react": "^5.0.2",
     "@storybook/theming": "^5.0.2",
-    "@types/storybook__addon-actions": "^3.4.2",
-    "@types/storybook__addon-links": "^3.3.4",
-    "@types/storybook__react": "^4.0.1",
     "@svgr/rollup": "^4.1.0",
     "@types/jest": "^24.0.11",
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
+    "@types/storybook__addon-actions": "^3.4.2",
+    "@types/storybook__addon-links": "^3.3.4",
+    "@types/storybook__react": "^4.0.1",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.1.4",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.4.1",
+    "react-docgen-typescript-loader": "^3.0.1",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "^3.1.0",
     "rollup": "^1.6.0",
@@ -61,10 +64,9 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-typescript2": "^0.20.1",
     "rollup-plugin-url": "^2.2.0",
-    "typescript": "^3.3.3333",
-    "react-docgen-typescript-loader": "^3.0.1",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "storybook-readme": "^5.0.0",
+    "typescript": "^3.3.3333"
   },
   "files": [
     "dist"
