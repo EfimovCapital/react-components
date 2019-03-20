@@ -14,15 +14,19 @@ export const consoleStories = storiesOf("Console", module);
 consoleStories.add("Basic console", () => {
     return <Console
         logs={List([
-            <span key={0}>ABC</span>,
-            <span key={1}>DEF</span>,
-            <span key={2}>GHI</span>,
-            <span key={3}>JKL</span>,
-            <span key={4}>MNO</span>,
-            <span key={5}>PQR</span>,
-            <span key={6}>STU</span>,
-            <span key={7}>VWX</span>,
-            <span key={8}>YZ.</span>,
+            <span key={0}>AB</span>,
+            <span key={1}>CD</span>,
+            <span key={2}>EF</span>,
+            <span key={3}>GH</span>,
+            <span key={4}>IJ</span>,
+            <span key={5}>KL</span>,
+            <span key={6}>MN</span>,
+            <span key={7}>OP</span>,
+            <span key={8}>QR</span>,
+            <span key={9}>ST</span>,
+            <span key={10}>UV</span>,
+            <span key={11}>WX</span>,
+            <span key={12}>YZ.</span>,
         ])}
     />;
 }, { info: { source: false } });

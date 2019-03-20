@@ -6,19 +6,9 @@ import {
 
 import { Blocky } from "../src/index";
 
-import BlockyREADME from '../src/blocky/README.md';
-
 import "./styles.css";
 
-export const blocky = storiesOf("Blocky", module)
-    .addParameters({
-        readme: {
-            // Show readme before story
-            // content: BlockyREADME,
-            // Show readme at the addons panel
-            sidebar: BlockyREADME,
-        },
-    })
+export const blocky = storiesOf("Blocky", module);
 
 blocky.add("Basic blocky", () => {
     return <Blocky address="0x01234" />;
