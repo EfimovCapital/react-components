@@ -13,17 +13,10 @@
     height: 45px;
 
     .search-bar--icon {
-        background-image: url('./magnify.svg');
-        width: 17px;
-        height: 17px;
-        margin-right: 5px;
-    }
-
-
-    svg {
         width: 20px;
         height: 20px;
         opacity: 0.6;
+        margin-right: 10px;
     }
 
     input {
@@ -34,5 +27,9 @@
         border: 0;
         height: 45px;
         width: 100%;
+
+        &:focus {
+            outline: 0;
+        }
     }
 }
