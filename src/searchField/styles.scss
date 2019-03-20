@@ -1,0 +1,38 @@
+.search-bar {
+    overflow: hidden;
+
+    border-radius: 16px;
+    background: white;
+    bottom: 0;
+    border: 1px solid #ddd;
+    align-items: center;
+    $padding-left: 15px;
+    padding-left: $padding-left;
+    width: calc(100% - #{$padding-left});
+    display: flex;
+    height: 45px;
+
+    .search-bar--icon {
+        background-image: url('./magnify.svg');
+        width: 17px;
+        height: 17px;
+        margin-right: 5px;
+    }
+
+
+    svg {
+        width: 20px;
+        height: 20px;
+        opacity: 0.6;
+    }
+
+    input {
+        background: white;
+        color: black;
+        font-size: 14px;
+        font-weight: 500;
+        border: 0;
+        height: 45px;
+        width: 100%;
+    }
+}

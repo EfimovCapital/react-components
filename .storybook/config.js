@@ -20,8 +20,8 @@ addDecorator(
   withInfo({
     styles: {
       infoBody: {
-        border: "1px solid black",
-        padding: '0px 5px',
+        border: "1px solid #eee",
+        padding: '20px 20px',
         lineHeight: '2'
       },
     },
@@ -29,13 +29,13 @@ addDecorator(
   })
 );
 
-// README
+// // README
 
-import {
-  addReadme
-} from 'storybook-readme';
+// import {
+//   addReadme
+// } from 'storybook-readme';
 
 
-addDecorator(addReadme);
+// addDecorator(addReadme);
 
 configure(loadStories, module);

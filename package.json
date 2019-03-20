@@ -1,5 +1,5 @@
 {
-  "name": "ren-react-ts",
+  "name": "@renex/react-components",
   "version": "1.0.0",
   "description": "",
   "author": "republicprotocol",
@@ -24,6 +24,9 @@
     "deploy": "gh-pages -d docs"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.16",
+    "@fortawesome/free-brands-svg-icons": "^5.8.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "immutable": "^4.0.0-rc.12"
   },
   "peerDependencies": {
@@ -64,7 +67,6 @@
     "rollup-plugin-typescript2": "^0.20.1",
     "rollup-plugin-url": "^2.2.0",
     "sass-loader": "^7.1.0",
-    "storybook-readme": "^5.0.0",
     "typescript": "^3.3.3333"
   },
   "files": [
