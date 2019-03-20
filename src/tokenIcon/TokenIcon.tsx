@@ -1,8 +1,29 @@
 import * as React from "react";
 
 import Info from "../infoLabel/info.svg";
+import BTC from "./icons/btc.svg";
+import DAI from "./icons/dai.svg";
+import DGX from "./icons/dgx.svg";
+import ETH from "./icons/eth.svg";
+import OMG from "./icons/omg.svg";
+import REN from "./icons/ren.svg";
+import TUSD from "./icons/tusd.svg";
+import WBTC from "./icons/wbtc.svg";
+import ZRX from "./icons/zrx.svg";
 
 import "./styles.scss";
+
+const icons = {
+    BTC: BTC,
+    DAI: DAI,
+    DGX: DGX,
+    ETH: ETH,
+    OMG: OMG,
+    REN: REN,
+    TUSD: TUSD,
+    WBTC: WBTC,
+    ZRX: ZRX,
+};
 
 export class TokenIcon extends React.Component<Props, State> {
     constructor(props: Props) {
@@ -12,10 +33,10 @@ export class TokenIcon extends React.Component<Props, State> {
     public render = (): JSX.Element => {
         const { token, className } = this.props;
         let image;
-        try {
+        if (icons[token]) {
             // tslint:disable-next-line: non-literal-require
-            image = require(`./icons/${token.toLowerCase()}.svg`);
-        } catch (_err) {
+            image = icons[token];
+        } else {
             image = Info;
         }
 
