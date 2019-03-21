@@ -6,7 +6,7 @@ import {
 
 import { Loading } from "../src/index";
 
-import "./styles.css";
+import "./styles/styles.scss";
 
 export const loading = storiesOf("Loading", module);
 

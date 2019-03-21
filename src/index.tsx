@@ -5,3 +5,4 @@ export { InfoLabel, LabelLevel } from "./infoLabel/InfoLabel";
 export { Loading } from "./loading/Loading";
 export { SearchField } from "./searchField/SearchField";
 export { TokenIcon } from "./tokenIcon/TokenIcon";
+export { SelectMarket } from "./selectMarket/SelectMarket";
