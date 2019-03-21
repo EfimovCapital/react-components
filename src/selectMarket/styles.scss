@@ -1,0 +1,94 @@
+@import '../variables';
+
+.select--market {
+
+    .Select--currency {
+        width: 100%;
+
+        .Select-control {
+            $height: 44px;
+            height: $height;
+            border-radius: $height / 2;
+            border-color: $light-grey !important;
+
+            input {
+                padding: 0 4px !important;
+            }
+
+            >div:first-child {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            >div>span {
+                display: none;
+            }
+
+            >div>div>svg {
+                color: $blue-bright;
+            }
+
+            >div+div+div {
+                z-index: 1;
+            }
+        }
+
+        &>div+div {
+            width: 240px;
+            border-radius: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+
+        // @media(min-width: $min-sm) {
+        //     width: 122px;
+        // }
+    }
+
+    .Select--option,
+    .Select-value {
+        color: $mid-grey;
+        font-weight: 500;
+        font-size: 16px;
+        display: flex !important;
+        align-items: center !important;
+
+        img {
+            background-color: white;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 100%;
+        }
+
+        span {
+            opacity: 0.6;
+            margin-left: auto;
+        }
+    }
+
+    .Select--option {
+        font-size: 10px;
+    }
+
+    &.select--market--second {
+        .Select-dropdown {
+            &>div:not(:first-child) {
+                background-color: rgba(216, 216, 216, 0.5);
+
+                &>div:last-child {
+                    opacity: 0.5;
+                }
+            }
+
+            &>div:first-child:not(.Select--option) {
+                padding: 10px 0;
+            }
+
+            &>div>div:last-child {
+                margin-top: 10px;
+            }
+        }
+    }
+}

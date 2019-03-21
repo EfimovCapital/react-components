@@ -1,11 +1,5 @@
 html {
-    font-family: "Nunito Sans",
-        -apple-system,
-        ".SFNSText-Regular",
-        "San Francisco",
-        BlinkMacSystemFont,
-        "Segoe UI",
-        "Helvetica Neue",
+    font-family: 'PingFang SC',
         Helvetica,
         Arial,
         sans-serif;
@@ -39,4 +33,14 @@ pre {
 
 .storybook-readme-story>div {
     display: inherit !important;
+}
+
+.select-market--example {
+    width: 150px;
+    padding: 0 60px;
+    font-size: 12px;
+
+    >*+* {
+        margin-top: 10px;
+    }
 }

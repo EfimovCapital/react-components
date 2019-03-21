@@ -7,7 +7,7 @@ import { List } from "immutable";
 
 import { Console } from "../src/index";
 
-import "./styles.css";
+import "./styles/styles.scss";
 
 export const consoleStories = storiesOf("Console", module);
 

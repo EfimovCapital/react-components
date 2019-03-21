@@ -7,7 +7,7 @@ import {
 import { SearchField } from "../src/index";
 import { SearchFieldExample } from "../src/searchField/SearchFIeldExample";
 
-import "./styles.css";
+import "./styles/styles.scss";
 
 export const searchField = storiesOf("SearchField", module);
 
