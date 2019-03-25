@@ -1,13 +1,8 @@
 import * as React from "react";
 
-import { storiesOf } from "@storybook/react";
+import { SelectMarket } from "./SelectMarket";
 
-import { SelectMarket } from "../src/index";
-
-import "./styles/styles.scss";
 import { OrderedMap } from "immutable";
-
-export const selectMarket = storiesOf("SelectMarket", module);
 
 type Token = string;
 type MarketPair = string;
@@ -46,7 +41,7 @@ export const getMarket = (
   );
 };
 
-export class Example extends React.Component<
+export class SelectMarketExample extends React.Component<
   {},
   { top: string; bottom: string }
 > {
@@ -95,7 +90,3 @@ export class Example extends React.Component<
     this.setState({ bottom: token });
   };
 }
-
-selectMarket.add("List of token icons", () => {
-  return <Example />;
-});
