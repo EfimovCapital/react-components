@@ -9,6 +9,7 @@ import OMG from "./icons/omg.svg";
 import REN from "./icons/ren.svg";
 import TUSD from "./icons/tusd.svg";
 import WBTC from "./icons/wbtc.svg";
+import ZEC from "./icons/zec.svg";
 import ZRX from "./icons/zrx.svg";
 
 import "./styles.scss";
@@ -22,6 +23,7 @@ const icons = {
     REN: REN,
     TUSD: TUSD,
     WBTC: WBTC,
+    ZEC: ZEC,
     ZRX: ZRX,
 };
 
