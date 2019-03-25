@@ -20,6 +20,7 @@ currencyIcon.add("List of token icons", () => {
         <p><TokenIcon token={"REN"} /> REN</p>,
         <p><TokenIcon token={"TUSD"} /> TUSD</p>,
         <p><TokenIcon token={"WBTC"} /> WBTC</p>,
+        <p><TokenIcon token={"ZEC"} /> ZEC</p>,
         <p><TokenIcon token={"ZRX"} /> ZRX</p>,
     ];
 });
