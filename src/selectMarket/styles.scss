@@ -40,10 +40,6 @@
             transform: translateX(-50%);
             overflow: hidden;
         }
-
-        // @media(min-width: $min-sm) {
-        //     width: 122px;
-        // }
     }
 
     .Select--option,
@@ -88,6 +84,17 @@
 
             &>div>div:last-child {
                 margin-top: 10px;
+            }
+        }
+    }
+
+    &.select--market--error {
+        .Select-control {
+            border: 1px solid lighten($light-red, 15%) !important;
+            background-color: lighten($light-red, 32%);
+
+            >div>div>svg {
+                color: $light-red;
             }
         }
     }
