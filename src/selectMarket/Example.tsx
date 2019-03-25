@@ -44,8 +44,8 @@ export const getMarket = (
 export class SelectMarketExample extends React.Component<
   {},
   { top: string; bottom: string }
-> {
-  constructor(props) {
+  > {
+  constructor(props: any) {
     super(props);
     this.state = {
       top: "BTC",
