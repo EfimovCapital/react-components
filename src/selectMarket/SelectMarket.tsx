@@ -63,8 +63,9 @@ export class SelectMarket extends React.Component<Props, State> {
             if (rightCurrencies[0].options && rightCurrencies[1].options) {
                 list = rightCurrencies[0].options.concat(rightCurrencies[1].options);
             }
+            const error = !this.props.getMarket(otherToken, thisToken);
 
-            return <div className="select--market select--market--second">
+            return <div className={`select--market select--market--second ${error ? "select--market--error" : ""}`}>
                 <Select
                     className="Select--currency"
                     name="baseCode"
