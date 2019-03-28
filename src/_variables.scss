@@ -30,3 +30,9 @@ $cubic-bezier: cubic-bezier(0.8, 0, 0.2, 1);
 
 // Border radii:
 $column-border-radius: 16px;
+
+.hide-scrollbar::-webkit-scrollbar {
+    /* remove scrollbar space */
+    width: 0px;
+    height: 0px;
+}

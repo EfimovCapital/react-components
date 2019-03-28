@@ -4,7 +4,7 @@ import Select from "react-select";
 
 import "./styles.scss";
 
-import { CustomControl, CustomMenuList, CustomOption, CustomValue, OptionType } from "./Select";
+import { CustomOption, CustomValue, OptionType, CustomGroup } from "./Select";
 
 type Token = string;
 type MarketPair = string;
@@ -39,6 +39,7 @@ export class SelectMarket extends React.Component<Props, State> {
                 <div className="select--market">
                     <Select
                         className="Select--currency"
+                        classNamePrefix="Select--currency"
                         name="quoteCode"
                         value={leftCurrencies.find((option => option.value === thisToken)) || null}
                         onChange={this.handleChange}
@@ -46,8 +47,7 @@ export class SelectMarket extends React.Component<Props, State> {
                         components={{
                             SingleValue: CustomValue,
                             Option: CustomOption,
-                            Control: CustomControl,
-                            MenuList: CustomMenuList,
+                            Group: CustomGroup,
                         }}
                         isClearable={false}
                         backspaceRemovesValue={false}
@@ -68,6 +68,7 @@ export class SelectMarket extends React.Component<Props, State> {
             return <div className={`select--market select--market--second ${error ? "select--market--error" : ""}`}>
                 <Select
                     className="Select--currency"
+                    classNamePrefix="Select--currency"
                     name="baseCode"
                     value={list.find((option => option.value === thisToken)) || null}
                     onChange={this.handleChange}
@@ -76,8 +77,7 @@ export class SelectMarket extends React.Component<Props, State> {
                     components={{
                         SingleValue: CustomValue,
                         Option: CustomOption,
-                        Control: CustomControl,
-                        MenuList: CustomMenuList,
+                        Group: CustomGroup,
                     }}
                     isClearable={false}
                     backspaceRemovesValue={false}
