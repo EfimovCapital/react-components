@@ -11,10 +11,10 @@ import "./styles/styles.scss";
 export const infoLabel = storiesOf("InfoLabel", module);
 
 infoLabel.add("Info label", () => {
-    return <p>Hover to see information: <InfoLabel>Some information</InfoLabel></p>;
+    return <p style={{ marginTop: "50px" }}>Hover to see information: <InfoLabel>Some information</InfoLabel></p>;
 });
 
 
 infoLabel.add("Warning label", () => {
-    return <p>Hover to the warning: <InfoLabel level={LabelLevel.Warning}>A warning</InfoLabel></p>;
+    return <p style={{ marginTop: "50px" }}>Hover to the warning: <InfoLabel level={LabelLevel.Warning}>A warning</InfoLabel></p>;
 });

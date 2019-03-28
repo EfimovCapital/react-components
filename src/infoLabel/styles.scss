@@ -8,7 +8,6 @@ $icon-size: 16px;
 }
 
 .label--icon {
-    background-image: url('./info.svg');
     background-size: contain;
     background-repeat: no-repeat;
     height: $icon-size;
@@ -20,24 +19,16 @@ $icon-size: 16px;
     display: block;
 }
 
-.info--icon {
-    background-image: url('./info.svg');
-}
-
-.warning--icon {
-    background-image: url('./warning.svg');
-}
-
 .label--message {
     margin-left: $icon-size / 2;
-    margin-top: -25px;
+    margin-top: -28px;
     display: none;
     font-weight: normal;
     line-height: 1.4;
     background-color: white;
     border: 1px solid #cccccc;
     border-radius: 12px;
-    box-shadow: 0 10px 25px 0 rgba(50, 94, 128, 0.2);
+    box-shadow: 0px 1px 2px rgba(0, 27, 58, 0.05);
     padding: 10px;
     position: fixed;
     transform: translateX(-50%) translateY(-100%);

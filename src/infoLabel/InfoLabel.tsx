@@ -2,6 +2,9 @@ import * as React from "react";
 
 import "./styles.scss";
 
+import Info from "./info.svg";
+import Warning from "./warning.svg";
+
 export enum LabelLevel {
     Info = "info",
     Warning = "warning"
@@ -18,10 +21,10 @@ export class InfoLabel extends React.Component<Props, State> {
      */
     public render(): React.ReactNode {
         const { level, children } = this.props;
-        const iconType = level || LabelLevel.Info;
+        const icon = level === LabelLevel.Warning ? Warning : Info;
         return (
             <div className="label">
-                <div className={`label--icon ${iconType}--icon`} />
+                <img className="label--icon" src={icon} />
                 <div className="label--message">{children ? children : ""}</div>
             </div>
         );
