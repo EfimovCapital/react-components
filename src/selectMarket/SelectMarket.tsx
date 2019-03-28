@@ -40,7 +40,7 @@ export class SelectMarket extends React.Component<Props, State> {
                     <Select
                         className="Select--currency"
                         name="quoteCode"
-                        value={leftCurrencies.find((option => option.value === thisToken))}
+                        value={leftCurrencies.find((option => option.value === thisToken)) || null}
                         onChange={this.handleChange}
                         options={leftCurrencies}
                         components={{
@@ -69,7 +69,7 @@ export class SelectMarket extends React.Component<Props, State> {
                 <Select
                     className="Select--currency"
                     name="baseCode"
-                    value={list.find((option => option.value === thisToken))}
+                    value={list.find((option => option.value === thisToken)) || null}
                     onChange={this.handleChange}
                     options={rightCurrencies}
                     // menuIsOpen
