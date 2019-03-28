@@ -5,7 +5,18 @@
     .Select--currency {
         width: 100%;
 
-        .Select-control {
+        .Select--currency__menu {
+            padding: 10px;
+        }
+
+        .Select--currency__menu-list {
+            max-height: 350px;
+            @extend .hide-scrollbar;
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
+
+        .Select--currency__control {
             $height: 44px;
             height: $height;
             border-radius: $height / 2;
@@ -42,8 +53,9 @@
         }
     }
 
-    .Select--option,
-    .Select-value {
+    .Select--currency__option,
+    .Select--currency__value,
+    .Select--currency__single-value {
         color: $mid-grey;
         font-weight: 500;
         font-size: 16px;
@@ -64,32 +76,47 @@
         }
     }
 
-    .Select--option {
+    .Select--currency__option {
         font-size: 10px;
+        border: 1px solid rgba(255, 255, 255, 0);
+
+        &.Select--currency__option--selected {
+            border: 1px solid #DBE0E8;
+            box-sizing: border-box;
+            border-radius: 6px;
+            background-color: inherit;
+        }
+
+        &:hover {
+            border: 1px solid #DBE0E8;
+            box-sizing: border-box;
+            border-radius: 6px;
+            background-color: inherit;
+        }
     }
 
     &.select--market--second {
-        .Select-dropdown {
-            &>div:not(:first-child) {
-                background-color: rgba(216, 216, 216, 0.5);
 
-                &>div:last-child {
-                    opacity: 0.5;
-                }
-            }
+        .Select--currency__menu {
+            padding: 0px;
+        }
 
-            &>div:first-child:not(.Select--option) {
-                padding: 10px 0;
-            }
+        .Select--currency__group {
+            padding: 10px;
+        }
 
-            &>div>div:last-child {
-                margin-top: 10px;
+        .Select--currency__group--disabled {
+            // margin-top: 10px;
+            background-color: rgba(216, 216, 216, 0.5);
+
+            &>div:last-child {
+                opacity: 0.5;
             }
         }
     }
 
     &.select--market--error {
-        .Select-control {
+        .Select--currency__control {
             border: 1px solid lighten($light-red, 15%) !important;
             background-color: lighten($light-red, 32%);
 
