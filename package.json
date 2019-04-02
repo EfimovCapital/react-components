@@ -5,9 +5,10 @@
   "author": "republicprotocol",
   "license": "GPL-3.0",
   "repository": "republicprotocol/ren-react-ts",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/lib.js",
+  "module": "dist/lib.es.js",
+  "jsnext:main": "dist/lib.es.js",
+  "types": "dist/lib.d.ts",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
