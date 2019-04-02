@@ -15,3 +15,8 @@ declare module "*.svg" {
   export default svgUrl;
   export { svgComponent as ReactComponent }
 }
+
+declare module "react-element-to-jsx-string";
+declare module "react-syntax-highlighter/dist/prism-light";
+declare module "react-syntax-highlighter/dist/esm/styles/prism";
+declare module "react-syntax-highlighter/dist/esm/languages/prism/jsx";

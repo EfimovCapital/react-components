@@ -1,9 +1,7 @@
 # Ren React Components
 
-[Live storybook](https://republicprotocol.github.io/ren-react-ts/storybook)
-
 ## Test locally
 
 ```sh
-yarn run storybook
+yarn start
 ```

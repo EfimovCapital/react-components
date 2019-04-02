@@ -1,12 +1,8 @@
 import * as React from "react";
 
-import { storiesOf } from "@storybook/react";
-
 import { SelectMarket } from "../SelectMarket";
 
 import { OrderedMap } from "immutable";
-
-export const selectMarket = storiesOf("SelectMarket", module);
 
 type Token = string;
 type MarketPair = string;
@@ -45,53 +41,28 @@ export const getMarket = (
   );
 };
 
-export default class Example extends React.Component<{}, { top: string; bottom: string }> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      top: "BTC",
-      bottom: "DAI"
-    };
-  }
+export default () => {
+  const [top, setTop] = React.useState("BTC");
+  const [bottom, setBottom] = React.useState("DAI");
 
-  /**
-   * The main render function.
-   * @dev Should have minimal computation, loops and anonymous functions.
-   */
-  public render(): React.ReactNode {
-    return (
-      <div className="select-market--example">
-        <SelectMarket
-          top={true}
-          thisToken={this.state.top}
-          otherToken={this.state.bottom}
-          allTokens={Tokens}
-          key={"top"}
-          onChange={this.onTopChange}
-          getMarket={getMarket}
-        />
-        <SelectMarket
-          top={false}
-          thisToken={this.state.bottom}
-          otherToken={this.state.top}
-          allTokens={Tokens}
-          key={"bottom"}
-          onChange={this.onBottomChange}
-          getMarket={getMarket}
-        />
-      </div>
-    );
-  }
-
-  private readonly onTopChange = (token: string): void => {
-    this.setState({ top: token });
-  };
-
-  private readonly onBottomChange = (token: string): void => {
-    this.setState({ bottom: token });
-  };
+  return <div className="select-market--example">
+    <SelectMarket
+      top={true}
+      thisToken={top}
+      otherToken={bottom}
+      allTokens={Tokens}
+      key={"top"}
+      onChange={setTop}
+      getMarket={getMarket}
+    />
+    <SelectMarket
+      top={false}
+      thisToken={bottom}
+      otherToken={top}
+      allTokens={Tokens}
+      key={"bottom"}
+      onChange={setBottom}
+      getMarket={getMarket}
+    />
+  </div>;
 }
-
-selectMarket.add("List of token icons", () => {
-  return <Example />;
-});

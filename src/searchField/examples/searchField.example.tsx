@@ -6,42 +6,22 @@ import { SearchField, escapeRegExp } from "../SearchField";
  * ViewSwapperDBalances is a visual component for displaying the user's balances
  * held by the atomic-swap software, SwapperD
  */
-export default class extends React.Component<{}, State> {
-    private entries = ["Apple", "Ape", "App", "Art", "Banana", "Barn"];
+export default () => {
+    const [searchInput, setSearchInput] = React.useState("")
 
-    public constructor(props: {}, context: object) {
-        super(props, context);
-        this.state = {
-            searchInput: "",
-        };
-    }
+    const entries = ["Apple", "Ape", "App", "Art", "Banana", "Barn"];
 
-    /**
-     * The main render function.
-     * @dev Should have minimal computation, loops and anonymous functions.
-     */
-    public render(): React.ReactNode {
-        return (
-            <div>
-                <SearchField placeholder="Search words" onChange={this.onSearchChange} value={this.state.searchInput} />
-                {this.generateRows()}
-            </div>
-        );
-    }
 
-    private generateRows(): React.ReactNode[] {
-        const searchTest = new RegExp(`${true ? "^" : ""}${escapeRegExp(this.state.searchInput)}`, "i");
+    const generateRows = (): React.ReactNode[] => {
+        const searchTest = new RegExp(`${true ? "^" : ""}${escapeRegExp(searchInput)}`, "i");
 
-        return this.entries
+        return entries
             .filter(entry => searchTest.test(entry))
             .map(entry => <p>{entry}</p>);
     }
 
-    private readonly onSearchChange = (searchInput: string): void => {
-        this.setState({ searchInput });
-    }
-}
-
-interface State {
-    searchInput: string;
+    return <div>
+        <SearchField placeholder="Search words" onChange={setSearchInput} value={searchInput} autoFocus={true} />
+        {generateRows()}
+    </div>;
 }

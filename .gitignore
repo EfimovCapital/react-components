@@ -9,10 +9,6 @@ build
 dist
 .rpt2_cache
 
-# storybook
-docs
-storybook-static
-
 # misc
 .DS_Store
 .env
