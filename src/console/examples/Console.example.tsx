@@ -5,7 +5,7 @@ import {
 } from "@storybook/react";
 import { List } from "immutable";
 
-import { Console } from "../src/index";
+import { Console } from "../Console";
 
 import "./styles/styles.scss";
 

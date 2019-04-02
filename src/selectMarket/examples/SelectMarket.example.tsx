@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import { SelectMarket } from "../src/index";
+import { SelectMarket } from "../SelectMarket";
 
 import "./styles/styles.scss";
 import { OrderedMap } from "immutable";
@@ -49,7 +49,7 @@ export const getMarket = (
 export class Example extends React.Component<
   {},
   { top: string; bottom: string }
-> {
+  > {
   constructor(props) {
     super(props);
     this.state = {

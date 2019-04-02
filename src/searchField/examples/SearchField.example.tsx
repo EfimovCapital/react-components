@@ -4,8 +4,8 @@ import {
     storiesOf
 } from "@storybook/react";
 
-import { SearchField } from "../src/index";
-import { SearchFieldExample } from "../src/searchField/SearchFIeldExample";
+import { SearchField } from "../SearchField";
+import { SearchFieldExample } from "./SearchFIeldExample";
 
 import "./styles/styles.scss";
 

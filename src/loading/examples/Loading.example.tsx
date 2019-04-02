@@ -4,7 +4,7 @@ import {
     storiesOf
 } from "@storybook/react";
 
-import { Loading } from "../src/index";
+import { Loading } from "../Loading";
 
 import "./styles/styles.scss";
 

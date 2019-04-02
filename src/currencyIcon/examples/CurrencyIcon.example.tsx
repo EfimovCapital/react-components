@@ -4,7 +4,7 @@ import {
     storiesOf
 } from "@storybook/react";
 
-import { CurrencyIcon, Currency } from "../src/index";
+import { CurrencyIcon, Currency } from "../CurrencyIcon";
 
 import "./styles/styles.scss";
 

@@ -4,7 +4,7 @@ import {
     storiesOf
 } from "@storybook/react";
 
-import { InfoLabel, LabelLevel } from "../src/index";
+import { InfoLabel, LabelLevel } from "../InfoLabel";
 
 import "./styles/styles.scss";
 
