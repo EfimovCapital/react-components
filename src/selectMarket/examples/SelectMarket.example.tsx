@@ -4,7 +4,6 @@ import { storiesOf } from "@storybook/react";
 
 import { SelectMarket } from "../SelectMarket";
 
-import "./styles/styles.scss";
 import { OrderedMap } from "immutable";
 
 export const selectMarket = storiesOf("SelectMarket", module);

@@ -6,7 +6,6 @@ import {
 
 import { CurrencyIcon, Currency } from "../CurrencyIcon";
 
-import "./styles/styles.scss";
 
 export const currencyIcon = storiesOf("CurrencyIcon", module);
 

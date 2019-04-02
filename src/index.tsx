@@ -3,16 +3,32 @@ import { render } from "react-dom";
 import { HashRouter, Route, Link } from "react-router-dom";
 
 import { SelectMarketExample } from "./selectMarket/Example";
+import { BlockyExample } from "./blocky/examples/Blocky.example";
 
-const selectMarket1 = "/select-market-1";
+import "./styles/styles.scss";
+
+const examples = {
+  selectMarket: [SelectMarketExample],
+  blocky: [BlockyExample],
+}
 
 function Home() {
+  console.log(examples);
   return <div>
     <h1>Home</h1>
-    <hr />
-    <h2>Select Market</h2>
-    <p><Link to={selectMarket1}>Select Market Example 1</Link></p>
-    <hr />
+    {Object.keys(examples).map(exampleGroup => {
+      const title = exampleGroup.replace(/([A-Z])/, " $1").replace(/^[a-z]/, (l) => l.toUpperCase());
+      return <div className="example-group" key={exampleGroup}>
+        <h2>{title}</h2>
+        <div className="example-group--body">
+          {
+            examples[exampleGroup].map((_example: React.ComponentClass, index: number) =>
+              <Link to={`/${exampleGroup}-${index + 1}`}><p key={index}>{title} Example #{index + 1}</p></Link>
+            )
+          }
+        </div>
+      </div>;
+    })}
   </div>;
 }
 
@@ -22,7 +38,14 @@ function App() {
       <div className="App">
         <p><Link to="/">Home</Link></p>
         <Route path="/" exact component={Home} />
-        <Route path={selectMarket1} exact component={SelectMarketExample} />
+        {Object.keys(examples).map(exampleGroup => <div key={exampleGroup}>
+          {
+            examples[exampleGroup].map((example: React.ComponentClass, index: number) =>
+              <Route path={`/${exampleGroup}-${index + 1}`} component={example} />
+            )
+          }
+        </div>
+        )}
       </div>
     </HashRouter>
   );
