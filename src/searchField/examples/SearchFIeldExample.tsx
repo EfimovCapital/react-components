@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { SearchField, escapeRegExp } from "./SearchField";
+import { SearchField, escapeRegExp } from "../SearchField";
 
 /**
  * ViewSwapperDBalances is a visual component for displaying the user's balances

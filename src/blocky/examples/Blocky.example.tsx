@@ -4,7 +4,7 @@ import {
     storiesOf
 } from "@storybook/react";
 
-import { Blocky } from "../src/index";
+import { Blocky } from "../Blocky";
 
 import "./styles/styles.scss";
 
