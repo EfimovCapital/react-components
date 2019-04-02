@@ -6,7 +6,7 @@ import { SearchField, escapeRegExp } from "../SearchField";
  * ViewSwapperDBalances is a visual component for displaying the user's balances
  * held by the atomic-swap software, SwapperD
  */
-export class SearchFieldExample extends React.Component<{}, State> {
+export default class extends React.Component<{}, State> {
     private entries = ["Apple", "Ape", "App", "Art", "Banana", "Barn"];
 
     public constructor(props: {}, context: object) {

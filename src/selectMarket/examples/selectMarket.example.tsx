@@ -45,11 +45,8 @@ export const getMarket = (
   );
 };
 
-export class Example extends React.Component<
-  {},
-  { top: string; bottom: string }
-  > {
-  constructor(props) {
+export default class Example extends React.Component<{}, { top: string; bottom: string }> {
+  constructor(props: {}) {
     super(props);
     this.state = {
       top: "BTC",

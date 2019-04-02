@@ -2,41 +2,53 @@ import * as React from "react";
 import { render } from "react-dom";
 import { HashRouter, Route, Link } from "react-router-dom";
 
-import { SelectMarketExample } from "./selectMarket/Example";
-import { BlockyExample } from "./blocky/examples/Blocky.example";
+import blockyExample from "./blocky/examples/blocky.example";
+import consoleExample from "./console/examples/console.example";
+import currencyIconExample from "./currencyIcon/examples/currencyIcon.example";
+import infoLabelExample from "./infoLabel/examples/infoLabel.example";
+import loadingExample from "./loading/examples/loading.example";
+import searchFieldExample from "./searchField/examples/searchField.example";
+import selectMarketExample from "./selectMarket/examples/selectMarket.example";
+import tokenIconExample from "./tokenIcon/examples/tokenIcon.example";
 
 import "./styles/styles.scss";
 
 const examples = {
-  selectMarket: [SelectMarketExample],
-  blocky: [BlockyExample],
+  blocky: [blockyExample],
+  console: [consoleExample],
+  currencyIcon: [currencyIconExample],
+  infoLabel: [infoLabelExample],
+  loading: [loadingExample],
+  searchField: [searchFieldExample],
+  selectMarket: [selectMarketExample],
+  tokenIcon: [tokenIconExample],
 }
 
 function Home() {
   console.log(examples);
-  return <div>
-    <h1>Home</h1>
+  return <div className="example-group">
     {Object.keys(examples).map(exampleGroup => {
       const title = exampleGroup.replace(/([A-Z])/, " $1").replace(/^[a-z]/, (l) => l.toUpperCase());
-      return <div className="example-group" key={exampleGroup}>
-        <h2>{title}</h2>
-        <div className="example-group--body">
-          {
-            examples[exampleGroup].map((_example: React.ComponentClass, index: number) =>
-              <Link to={`/${exampleGroup}-${index + 1}`}><p key={index}>{title} Example #{index + 1}</p></Link>
-            )
-          }
-        </div>
-      </div>;
-    })}
-  </div>;
+      return examples[exampleGroup].map((example: React.ComponentClass, index: number) =>
+        <Link className="example--preview" to={`/${exampleGroup}-${index + 1}`} key={`/${exampleGroup}-${index}`}>
+          <div className="example-group--box">
+            <h3>{title}</h3>
+            <div className="example-group--body">
+              <div className="example--preview--inner">{React.createElement(example)}</div>
+            </div>
+          </div>
+        </Link>
+      )
+    }
+    )}
+  </div >;
 }
 
 function App() {
   return (
     <HashRouter>
-      <div className="App">
-        <p><Link to="/">Home</Link></p>
+      <div className="examples">
+        <Link to="/"><p className="home-button">Home</p></Link>
         <Route path="/" exact component={Home} />
         {Object.keys(examples).map(exampleGroup => <div key={exampleGroup}>
           {
