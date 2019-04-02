@@ -34,7 +34,8 @@ export default {
     resolve(),
     typescript({
       rollupCommonJSResolveHack: true,
-      clean: true
+      clean: true,
+      tsconfig: "./rollup.tsconfig.json"
     }),
     commonjs()
   ]
