@@ -1,3 +1,5 @@
+@import "../variables";
+
 html {
     font-family: 'PingFang SC',
         Helvetica,
@@ -9,31 +11,31 @@ html {
     padding-bottom: 100px;
 }
 
-h1 {
-    margin-right: 20px !important;
-    font-size: 25px !important;
-    display: inline !important;
-}
+// h1 {
+//     margin-right: 20px !important;
+//     font-size: 25px !important;
+//     display: inline !important;
+// }
 
-body {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
+// body {
+//     padding-top: 0 !important;
+//     padding-bottom: 0 !important;
+// }
 
-h2 {
-    display: inline !important;
-    color: #999 !important;
-}
+// h2 {
+// display: inline !important;
+// color: #999 !important;
+// }
 
-pre {
-    overflow-x: hidden !important;
-    padding: 20px !important;
-    background: #eee !important;
-}
+// pre {
+//     overflow-x: hidden !important;
+//     padding: 20px !important;
+//     background: #eee !important;
+// }
 
-.storybook-readme-story>div {
-    display: inherit !important;
-}
+// .storybook-readme-story>div {
+//     display: inherit !important;
+// }
 
 .select-market--example {
     width: 150px;
@@ -42,5 +44,27 @@ pre {
 
     >*+* {
         margin-top: 10px;
+    }
+}
+
+.example-group {
+
+    >h2 {
+        background: $blue-bright;
+        color: white;
+        padding: 10px;
+    }
+
+    .example-group--body {
+        display: flex;
+    }
+
+    >div>a {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+
+        text-decoration: none;
+        color: black;
     }
 }

@@ -6,7 +6,6 @@ import {
 
 import { Loading } from "../Loading";
 
-import "./styles/styles.scss";
 
 export const loading = storiesOf("Loading", module);
 

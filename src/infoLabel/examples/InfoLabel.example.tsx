@@ -6,7 +6,6 @@ import {
 
 import { InfoLabel, LabelLevel } from "../InfoLabel";
 
-import "./styles/styles.scss";
 
 export const infoLabel = storiesOf("InfoLabel", module);
 
