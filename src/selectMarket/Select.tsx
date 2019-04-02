@@ -4,7 +4,7 @@ import { css } from "emotion";
 import { OptionProps } from "react-select/lib/components/Option";
 import { SingleValueProps } from "react-select/lib/components/SingleValue";
 
-import { TokenIcon } from "../index";
+import { TokenIcon } from "../tokenIcon/TokenIcon";
 import { GroupProps } from "react-select/lib/components/Group";
 
 export interface OptionType {
