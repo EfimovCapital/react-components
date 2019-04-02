@@ -1,3 +1,5 @@
+export const name = "Blocky.test";
+
 // /* tslint:disable */
 
 // import test from "ava";

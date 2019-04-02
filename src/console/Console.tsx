@@ -1,8 +1,7 @@
 import * as React from "react";
 
-import { List } from "immutable";
-
 import "./styles.scss";
+import { List } from "immutable";
 
 /**
  * Console is a component for showing a scrolling list of Elements.
@@ -14,7 +13,7 @@ export class Console extends React.Component<Props, State> {
     public render = (): JSX.Element => {
         return (
             <div role="log" className="console">
-                {this.props.logs}
+                {(this.props.logs as any).map((e: any) => <span>{e}</span>)}
                 <br className="console--bottom" ref={this.updateBottomElement} />
             </div>);
     }
@@ -40,7 +39,7 @@ export class Console extends React.Component<Props, State> {
 }
 
 interface Props {
-    logs: List<JSX.Element>;
+    logs: Array<any> | List<any>;
 }
 
 interface State {

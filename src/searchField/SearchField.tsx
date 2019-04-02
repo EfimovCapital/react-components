@@ -10,7 +10,7 @@ export class SearchField extends React.Component<Props> {
      * @dev Should have minimal computation, loops and anonymous functions.
      */
     public render(): React.ReactNode {
-        const { className, value, placeholder } = this.props;
+        const { className, value, placeholder, autoFocus } = this.props;
 
         return <div className={`search-bar ${className ? className : ""}`}>
             <img src={Magnify} className="search-bar--icon" />
@@ -21,6 +21,7 @@ export class SearchField extends React.Component<Props> {
                 placeholder={placeholder}
                 onChange={this.handleInput}
                 value={value}
+                autoFocus={autoFocus}
             />
         </div>;
     }
@@ -35,6 +36,7 @@ interface Props {
     value: string;
     placeholder: string;
     className?: string;
+    autoFocus?: boolean;
     onChange(input: string): void;
 }
 
