@@ -128,10 +128,39 @@ html {
     .example--source-code {
         margin-top: 30px;
 
-        // pre {
-        //     color: white;
-        //     background: #222;
-        //     padding: 20px;
-        // }
+        pre {
+            color: rgb(204, 204, 204);
+            background: rgb(45, 45, 45) none repeat scroll 0% 0%;
+            font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            overflow-wrap: normal;
+            line-height: 1.5;
+            -moz-tab-size: 4;
+            hyphens: none;
+            padding: 1em;
+            margin: 0.5em 0px;
+            overflow: auto;
+        }
+
+        code {
+            color: rgb(204, 204, 204);
+            background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+            font-family: Consolas,
+                Monaco,
+                "Andale Mono",
+                "Ubuntu Mono",
+                monospace;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            overflow-wrap: normal;
+            line-height: 1.5;
+            -moz-tab-size: 4;
+            hyphens: none;
+        }
     }
 }

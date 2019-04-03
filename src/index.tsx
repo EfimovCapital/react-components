@@ -13,17 +13,6 @@ import searchFieldExample from "./searchField/examples/searchField.example";
 import selectMarketExample from "./selectMarket/examples/selectMarket.example";
 import tokenIconExample from "./tokenIcon/examples/tokenIcon.example";
 
-// import SyntaxHighlighter from "react-syntax-highlighter";
-// import SyntaxHighlighter, { registerLanguage } from "react-syntax-highlighter/dist/prism-light";
-// import jsx from 'react-syntax-highlighter/dist/esm//languages/prism/jsx';
-// import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
-
-import SyntaxHighlighter, { registerLanguage } from "react-syntax-highlighter/dist/prism-light";
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
-
-registerLanguage('jsx', jsx);
-
 import "./styles/styles.scss";
 
 const examples = {
@@ -63,9 +52,9 @@ const withSourceCode = (element: () => JSX.Element) => {
     {jsx}
     <details className="example--source-code">
       <summary>Source code</summary>
-      <SyntaxHighlighter language="jsx" style={tomorrow}>
+      <pre><code>
         {reactElementToJSXString(jsx)}
-      </SyntaxHighlighter>
+      </code></pre>
     </details>
   </>;
 }

@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import "./styles.scss";
-import { List } from "immutable";
 
 /**
  * Console is a component for showing a scrolling list of Elements.
@@ -39,7 +38,7 @@ export class Console extends React.Component<Props, State> {
 }
 
 interface Props {
-    logs: Array<any> | List<any>;
+    logs: Array<any> | IterableIterator<any>;
 }
 
 interface State {
