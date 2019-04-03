@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import Magnify from "./magnify.svg";
+import { ReactComponent as Magnify } from "./magnify.svg";
 
 import "./styles.scss";
 
@@ -13,7 +13,7 @@ export class SearchField extends React.Component<Props> {
         const { className, value, placeholder, autoFocus } = this.props;
 
         return <div className={`search-bar ${className ? className : ""}`}>
-            <img src={Magnify} className="search-bar--icon" />
+            <Magnify className="search-bar--icon" />
             <input
                 type="text"
                 role="textbox"
