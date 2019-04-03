@@ -30,6 +30,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "emotion": "^10.0.9",
+    "immutable": "^4.0.0-rc.12",
+    "moment": "^2.24.0",
     "react-element-to-jsx-string": "^14.0.2",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
@@ -41,13 +43,13 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@types/react-select": "^2.0.15",
-    "@types/react-router": "^4.4.5",
-    "@types/react-router-dom": "^4.3.1",
     "@svgr/rollup": "^4.1.0",
     "@types/jest": "^24.0.11",
     "@types/react": "^16.8.10",
     "@types/react-dom": "^16.8.3",
+    "@types/react-router": "^4.4.5",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/react-select": "^2.0.15",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "cross-env": "^5.2.0",
@@ -70,7 +72,8 @@
     "typescript": "^3.4.1"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/styles"
   ],
   "browserslist": [
     ">0.2%",

@@ -1,4 +1,4 @@
-@import '../variables';
+@import '../styles/common';
 
 .select--market {
 
@@ -24,24 +24,24 @@
 
             input {
                 padding: 0 4px !important;
-             }
+            }
 
-             >div:first-child {
+            >div:first-child {
                 padding-top: 0;
                 padding-bottom: 0;
-             }
+            }
 
-             >div>span {
+            >div>span {
                 display: none;
-             }
+            }
 
-             >div>div>svg {
+            >div>div>svg {
                 color: $blue-bright;
-             }
+            }
 
-             >div+div+div {
+            >div+div+div {
                 z-index: 1;
-             }
+            }
         }
 
         &>div+div {

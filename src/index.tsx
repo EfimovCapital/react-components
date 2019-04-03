@@ -4,7 +4,7 @@ import { HashRouter, Route, Link } from "react-router-dom";
 
 import reactElementToJSXString from 'react-element-to-jsx-string';
 
-import "./styles/styles.scss";
+import "./styles/examples.scss";
 
 const titled = (s: string) => s.replace(/([A-Z])/, " $1").replace(/^[a-z]/, (l) => l.toUpperCase());
 
