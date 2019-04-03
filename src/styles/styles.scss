@@ -96,7 +96,7 @@ html {
         h3 {
             padding: 5px;
             margin: 0;
-            height: calc($title-height - 10px);
+            height: calc(#{$title-height} - 10px);
 
             background: $blue-bright;
             color: white;
