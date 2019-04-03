@@ -2,8 +2,6 @@ import * as React from "react";
 
 import { SelectMarket } from "../SelectMarket";
 
-import { OrderedMap } from "immutable";
-
 type Token = string;
 type MarketPair = string;
 
@@ -15,7 +13,7 @@ export const Tokens = new Map<Token, { symbol: string; name: string }>()
   .set("TUSD", { symbol: "TUSD", name: "TrueUSD" })
   .set("WBTC", { symbol: "WBTC", name: "Wrapped Bitcoin" });
 
-export const MarketPairs = OrderedMap<
+export const MarketPairs = new Map<
   MarketPair,
   { symbol: string; quote: string; base: string }
 >()
@@ -28,17 +26,18 @@ export const getMarket = (
   left: Token,
   right: Token
 ): MarketPair | undefined => {
-  return (
-    MarketPairs.findKey(
-      marketDetails =>
-        marketDetails.base === left && marketDetails.quote === right
-    ) ||
-    MarketPairs.findKey(
-      marketDetails =>
-        marketDetails.base === right && marketDetails.quote === left
-    ) ||
-    undefined
-  );
+  const opt1 = `${left}/${right}`;
+  const opt2 = `${right}/${left}`;
+
+  if (MarketPairs.has(opt1)) {
+    return opt1;
+  }
+
+  if (MarketPairs.has(opt2)) {
+    return opt2;
+  }
+
+  return undefined;
 };
 
 export default () => {
