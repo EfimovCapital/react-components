@@ -9,6 +9,7 @@
   "module": "dist/lib.es.js",
   "jsnext:main": "dist/lib.es.js",
   "types": "dist/lib.d.ts",
+  "homepage": "https://republicprotocol.github.io/ren-react-ts",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -16,11 +17,13 @@
   "scripts": {
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
+    "demo:build": "react-scripts build",
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "start": "react-scripts start",
     "prepare": "$npm_execpath run build",
-    "deploy": "gh-pages"
+    "predeploy": "$npm_execpath run demo:build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
