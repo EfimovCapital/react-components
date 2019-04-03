@@ -4,45 +4,47 @@ import { HashRouter, Route, Link } from "react-router-dom";
 
 import reactElementToJSXString from 'react-element-to-jsx-string';
 
-import blockyExample from "./blocky/examples/blocky.example";
-import consoleExample from "./console/examples/console.example";
-import currencyIconExample from "./currencyIcon/examples/currencyIcon.example";
-import infoLabelExample from "./infoLabel/examples/infoLabel.example";
-import loadingExample from "./loading/examples/loading.example";
-import searchFieldExample from "./searchField/examples/searchField.example";
-import selectMarketExample from "./selectMarket/examples/selectMarket.example";
-import tokenIconExample from "./tokenIcon/examples/tokenIcon.example";
-
 import "./styles/styles.scss";
 
+const titled = (s: string) => s.replace(/([A-Z])/, " $1").replace(/^[a-z]/, (l) => l.toUpperCase());
+
 const examples = {
-  blocky: [blockyExample],
-  console: [consoleExample],
-  currencyIcon: [currencyIconExample],
-  infoLabel: [infoLabelExample],
-  loading: [loadingExample],
-  searchField: [searchFieldExample],
-  selectMarket: [selectMarketExample],
-  tokenIcon: [tokenIconExample],
+  basic: {
+    blocky: [require("./blocky/examples/1").default],
+    console: [require("./console/examples/1").default],
+    currencyIcon: [require("./currencyIcon/examples/1").default],
+    infoLabel: [require("./infoLabel/examples/1").default],
+    loading: [require("./loading/examples/1").default],
+    searchField: [require("./searchField/examples/1").default],
+    tokenIcon: [require("./tokenIcon/examples/1").default],
+    feedback: [require("./feedback/examples/1").default],
+  },
+  combined: {
+    selectMarket: [require("./selectMarket/examples/1").default],
+  }
 }
 
 function Home() {
-  return <div className="example-group">
-    {Object.keys(examples).map(exampleGroup => {
-      const title = exampleGroup.replace(/([A-Z])/, " $1").replace(/^[a-z]/, (l) => l.toUpperCase());
-      return examples[exampleGroup].map((example: () => JSX.Element, index: number) =>
-        <Link className="example--preview" to={`/${exampleGroup}-${index + 1}`} key={`/${exampleGroup}-${index}`}>
-          <div className="example-group--box">
-            <h3>{title}</h3>
-            <div className="example-group--body">
-              <div className="example--preview--inner">{React.createElement(example)}</div>
-            </div>
-          </div>
-        </Link>
-      )
-    }
-    )}
-  </div >;
+  return Object.keys(examples).map(category =>
+    <details open={true}>
+      <summary>{titled(category)}</summary>
+      <div className="example-group">
+        {Object.keys(examples[category]).map(exampleGroup => {
+          const title = titled(exampleGroup);
+          return examples[category][exampleGroup].map((example: () => JSX.Element, index: number) =>
+            <Link className="example--preview" to={`/${exampleGroup}-${index + 1}`} key={`/${exampleGroup}-${index}`}>
+              <div className="example-group--box">
+                <h3>{title}</h3>
+                <div className="example-group--body">
+                  <div className="example--preview--inner">{React.createElement(example)}</div>
+                </div>
+              </div>
+            </Link>
+          )
+        })}
+      </div>
+    </details>
+  )
 }
 
 
@@ -65,13 +67,15 @@ function App() {
       <div className="examples">
         <Link to="/"><p className="home-button">Home</p></Link>
         <Route path="/" exact component={Home} />
-        {Object.keys(examples).map(exampleGroup => <div key={exampleGroup}>
-          {
-            examples[exampleGroup].map((example: () => JSX.Element, index: number) =>
-              <Route path={`/${exampleGroup}-${index + 1}`} component={withSourceCode(example)} />
-            )
-          }
-        </div>
+        {Object.keys(examples).map(category =>
+          Object.keys(examples[category]).map(exampleGroup => <div key={exampleGroup}>
+            {
+              examples[category][exampleGroup].map((example: () => JSX.Element, index: number) =>
+                <Route path={`/${exampleGroup}-${index + 1}`} component={withSourceCode(example)} />
+              )
+            }
+          </div>
+          )
         )}
       </div>
     </HashRouter>
