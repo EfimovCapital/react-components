@@ -37,6 +37,6 @@ export default {
       clean: true,
       tsconfig: "./rollup.tsconfig.json"
     }),
-    commonjs()
+    commonjs(),
   ]
 }
