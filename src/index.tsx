@@ -48,14 +48,17 @@ function Home() {
   )
 }
 
+declare global {
+  const Prism: any;
+}
 
 const withSourceCode = (element: () => JSX.Element) => {
   const jsx = element();
   return () => <>
     {jsx}
-    <details className="example--source-code">
+    <details className="example--source-code" onClick={() => Prism.highlightAll()}>
       <summary>Source code</summary>
-      <pre><code>
+      <pre><code className="language-jsx">
         {reactElementToJSXString(jsx)}
       </code></pre>
     </details>
