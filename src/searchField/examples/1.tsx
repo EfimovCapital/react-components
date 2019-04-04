@@ -2,10 +2,6 @@ import * as React from "react";
 
 import { SearchField, escapeRegExp } from "../SearchField";
 
-/**
- * ViewSwapperDBalances is a visual component for displaying the user's balances
- * held by the atomic-swap software, SwapperD
- */
 export default () => {
     const [searchInput, setSearchInput] = React.useState("")
 
