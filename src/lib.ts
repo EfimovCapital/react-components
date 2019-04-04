@@ -13,6 +13,8 @@ export { SelectMarket } from "./selectMarket/SelectMarket";
 export { ScrollToTop } from "./scrollToTop/ScrollToTop";
 export { FeedbackButton } from "./feedback/FeedbackButton";
 export { TokenValueInput } from "./tokenValueInput/TokenValueInput";
+export { Header } from "./header/Header";
+export { Dropdown } from "./dropdown/Dropdown";
 
 export {
     naturalTime,

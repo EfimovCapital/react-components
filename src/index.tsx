@@ -18,6 +18,7 @@ const examples = {
     searchField: [require("./searchField/examples/1").default],
     tokenIcon: [require("./tokenIcon/examples/1").default],
     feedback: [require("./feedback/examples/1").default],
+    dropdown: [require("./dropdown/examples/1").default],
   },
   combined: {
     selectMarket: [require("./selectMarket/examples/1").default],
@@ -64,19 +65,21 @@ const withSourceCode = (element: () => JSX.Element) => {
 function App() {
   return (
     <HashRouter>
-      <div className="examples">
-        <Link to="/"><p className="home-button">Home</p></Link>
-        <Route path="/" exact component={Home} />
-        {Object.keys(examples).map(category =>
-          Object.keys(examples[category]).map(exampleGroup => <div key={exampleGroup}>
-            {
-              examples[category][exampleGroup].map((example: () => JSX.Element, index: number) =>
-                <Route path={`/${exampleGroup}-${index + 1}`} component={withSourceCode(example)} />
-              )
-            }
-          </div>
-          )
-        )}
+      <div className="themed-app">
+        <div className="examples theme-light">
+          <Link to="/"><p className="home-button">Home</p></Link>
+          <Route path="/" exact render={Home} />
+          {Object.keys(examples).map(category =>
+            Object.keys(examples[category]).map(exampleGroup => <div key={exampleGroup}>
+              {
+                examples[category][exampleGroup].map((example: () => JSX.Element, index: number) =>
+                  <Route path={`/${exampleGroup}-${index + 1}`} component={withSourceCode(example)} />
+                )
+              }
+            </div>
+            )
+          )}
+        </div>
       </div>
     </HashRouter>
   );

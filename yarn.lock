@@ -1258,10 +1258,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@^16.8.10":
-  version "16.8.10"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.10.tgz#1ccb6fde17f71a62ef055382ec68bdc379d4d8d9"
-  integrity sha512-7bUQeZKP4XZH/aB4i7k1i5yuwymDu/hnLMhD9NjVZvQQH7ZUgRN3d6iu8YXzx4sN/tNr0bj8jgguk8hhObzGvA==
+"@types/react@^16.8.12":
+  version "16.8.12"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.12.tgz#ffbdd7bcd2b7037c3f78e26c708922a2befbb71f"
+  integrity sha512-MZZiv11BQhsxFp5DHDmRKBi6Nv3jwOhRiFFDE7ZJ1+rb52gdOd9y/qY0+5wyV/PQVK9926wFMjpQj3BJ18pb4Q==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -6589,7 +6589,7 @@ loader-runner@^2.3.0:
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.4.0.tgz#ed47066bfe534d7e84c4c7b9998c2a75607d9357"
   integrity sha512-Jsmr89RcXGIwivFY21FcRrisYZfvLMTWx5kOLc+JTxtpBOG6xML0vzbc6SEQG2FO9/4Fc3wW4LVcB5DmGflaRw==
 
-loader-utils@1.2.3, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
+loader-utils@1.2.3, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
   integrity sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==
@@ -8942,14 +8942,14 @@ react-dev-utils@^8.0.0:
     strip-ansi "5.0.0"
     text-table "0.2.0"
 
-react-docgen-typescript-loader@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.0.1.tgz#889aa472450c8db82ea0355656a307806ec74e77"
-  integrity sha512-SAVMFdW5p76pVMS6c7Jl1mGM5EZLVBWJ+rfoTvEaC2SeDgSFflnkM8eJGZVhty+7FSefvOJcBBz2rMkciphERA==
+react-docgen-typescript-loader@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.1.0.tgz#09cacf872617c97f946ee920d2239f51d543be41"
+  integrity sha512-gY+b7RkRPty5ZN4NMQ+jwx9MzTVuIj6LJCwdWRAi1+nrHJfH2gMMytQfxFdzQ7BlgD4COWnSE8Ixtl2L62kCRw==
   dependencies:
     "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
-    loader-utils "^1.1.0"
-    react-docgen-typescript "^1.9.0"
+    loader-utils "^1.2.3"
+    react-docgen-typescript "^1.12.3"
 
 react-docgen-typescript-webpack-plugin@^1.1.0:
   version "1.1.0"
@@ -8959,7 +8959,7 @@ react-docgen-typescript-webpack-plugin@^1.1.0:
     ajv "^6.1.1"
     react-docgen-typescript "^1.2.3"
 
-react-docgen-typescript@^1.2.3, react-docgen-typescript@^1.9.0:
+react-docgen-typescript@^1.12.3, react-docgen-typescript@^1.2.3:
   version "1.12.3"
   resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.12.3.tgz#fe62a5ce82e93573e316366e53adfe8273121c70"
   integrity sha512-s1XswWs4ykNdWKsPyfM4qptV5dT8nnjnVi2IcjoS/vGlRNYrc0TkW0scVOrinHZ+ndKhPqA4iVNrdwhxZBzJcg==
@@ -9524,10 +9524,10 @@ rollup-plugin-babel@^4.3.2:
     "@babel/helper-module-imports" "^7.0.0"
     rollup-pluginutils "^2.3.0"
 
-rollup-plugin-commonjs@^9.2.2:
-  version "9.2.2"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.2.2.tgz#4959f3ff0d9706c132e5247b47ab385f11d9aae6"
-  integrity sha512-FXBgY+IvZIV2AZVT/0CPMsP+b1dKkxE+F6SHI9wddqKDV9KCGDA2cV5e/VsJLwXKFgrtliqMr7Rq3QBfPiJ8Xg==
+rollup-plugin-commonjs@^9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-9.3.0.tgz#7250c8383264f59efc7092340dc426509c7cfe4c"
+  integrity sha512-ydk1TYrRP+k9UzJ8B8Q2yFBWQSwGYv9vQfZ9YP9MkLLIA8/DnXRpEkoDXByOu10vNusV1tvk3vwhhrs0NTP4pQ==
   dependencies:
     estree-walker "^0.6.0"
     magic-string "^0.25.2"
@@ -9603,10 +9603,10 @@ rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.3.0, rollup-pluginutils@^2.3.3,
     estree-walker "^0.6.0"
     micromatch "^3.1.10"
 
-rollup@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.7.4.tgz#dd9d1d4935d3db38f16e1caaef635d8d1b0831c4"
-  integrity sha512-nc86fETLHdozhRWlW/uNVIQ7ODuA1vU2/L8znAxP9TNMx1NA6GTth3llqoxxCle2kkyui+OfGzbKaQxD60NJjA==
+rollup@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.8.0.tgz#e3ce8b708ad4325166717f74f244f691595d35e2"
+  integrity sha512-dKxL6ihUZ9YrVySKf/LBz5joW2sqwWkiuki34279Ppr2cL+O6Za6Ujovk+rtTX0AFCIsH1rs6y8LYKdZZ/7C5A==
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "^11.11.6"
