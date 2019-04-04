@@ -2,14 +2,14 @@
   "name": "@renex/react-components",
   "version": "1.0.17",
   "description": "",
-  "author": "republicprotocol",
+  "author": "renproject",
   "license": "GPL-3.0",
-  "repository": "republicprotocol/ren-react-ts",
+  "repository": "renproject/react-components",
   "main": "dist/lib.js",
   "module": "dist/lib.es.js",
   "jsnext:main": "dist/lib.es.js",
   "types": "dist/lib.d.ts",
-  "homepage": "https://republicprotocol.github.io/ren-react-ts",
+  "homepage": "https://renproject.github.io/react-components",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
