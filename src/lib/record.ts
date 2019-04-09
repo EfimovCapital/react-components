@@ -68,7 +68,7 @@ type Props<T> = {
     readonly [P in keyof T]: T[P];
 };
 // An interface of the methods that the class will have.
-interface Methods<T> {
+export interface Methods<T> {
     get<K extends keyof T, V extends T[K]>(key: K): V;
     set<K extends keyof T, V extends T[K]>(key: K, value: V): this;
     merge<K extends keyof T, V extends T[K]>(inner: Partial<T> | {

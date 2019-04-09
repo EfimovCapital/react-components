@@ -19,6 +19,8 @@
 
     color: #FFFFFF;
 
+    transition: opacity 0.4s ease-in-out;
+
     @media(min-width: $min-sm) {
         // width: auto;
         clear: none;

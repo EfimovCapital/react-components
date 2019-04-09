@@ -23,4 +23,5 @@ export {
     TimeMagnitude,
     getTimeMagnitude,
 } from "./lib/conversions";
-export { Record } from "./lib/Record";
+export { Record } from "./lib/record";
+export { EncodedData, Encodings } from "./lib/encodedData";
