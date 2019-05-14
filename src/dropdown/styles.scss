@@ -98,6 +98,15 @@ $arrow-size: 7px;
     margin-left: -($arrow-size + 2px);
 }
 
+.header--dropdown--options {
+    text-align: left;
+    margin-top: 0;
+
+    img {
+        margin-bottom: -1px;
+    }
+}
+
 .header--dropdown--option {
 
     padding: 12px 16px;
@@ -135,6 +144,8 @@ $arrow-size: 7px;
 .header--dropdown svg,
 .header--dropdown img {
     margin-right: 5px;
+    max-width: 22px;
+    max-height: 11px;
 }
 
 .header--dropdown .header--dropdown--highlight {
