@@ -30,6 +30,7 @@
     }
 
     &:disabled {
+        color: white;
         opacity: 0.5;
         cursor: not-allowed;
     }
@@ -40,12 +41,20 @@
     background: white;
     color: $blue-bright;
     font-weight: 400;
+
+    &:disabled {
+        color: $blue-bright;
+    }
 }
 
 .button--red {
     @extend .button;
     background: $light-red;
     color: white;
+
+    &:disabled {
+        color: white;
+    }
 }
 
 .button--alt {
@@ -55,6 +64,10 @@
     border: 0.1rem solid $blue-bright;
     position: relative;
     transition: color 0.4s ease-in-out;
+
+    &:disabled {
+        color: $blue-bright;
+    }
 }
 
 .button--success {
@@ -65,12 +78,20 @@
     &:disabled {
         opacity: 1;
     }
+
+    &:disabled {
+        color: $green;
+    }
 }
 
 .button--warning {
     @extend .button--success;
     color: $yellow;
     border: 0.1rem solid $yellow;
+
+    &:disabled {
+        color: $yellow;
+    }
 }
 
 // .button.button--alt:hover {

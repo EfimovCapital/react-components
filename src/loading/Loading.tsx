@@ -11,6 +11,7 @@ export const Loading = (inProps: Props): JSX.Element => {
         if (prop !== "alt") {
             props[prop] = inProps[prop];
         }
+        return null;
     }));
     return (
         <div {...props} className={`loading lds-dual-ring ${inProps.alt ? "alt" : ""} ${props.className}`} />

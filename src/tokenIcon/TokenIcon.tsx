@@ -28,10 +28,6 @@ const icons = {
 };
 
 export class TokenIcon extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-  }
-
   public render = (): JSX.Element => {
     const { token, className } = this.props;
     let image;
@@ -61,4 +57,4 @@ interface Props {
   className?: string;
 }
 
-interface State {}
+interface State { }

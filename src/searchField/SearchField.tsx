@@ -16,7 +16,6 @@ export class SearchField extends React.Component<Props> {
             <Magnify className="search-bar--icon" />
             <input
                 type="text"
-                role="textbox"
 
                 placeholder={placeholder}
                 onChange={this.handleInput}
