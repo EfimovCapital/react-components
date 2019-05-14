@@ -6,13 +6,10 @@ import "./styles.scss";
 
 import { CustomOption, CustomValue, OptionType, CustomGroup } from "./Select";
 
-type Token = string;
-type MarketPair = string;
-
 /**
  * SelectMarket allows the user to select a market from two token dropdowns
  */
-export class SelectMarket extends React.Component<Props, State> {
+export class SelectMarket<Token extends string, MarketPair extends string> extends React.Component<Props<Token, MarketPair>, State> {
 
     /**
      * The main render function.
@@ -139,7 +136,7 @@ export class SelectMarket extends React.Component<Props, State> {
     }
 }
 
-interface Props {
+interface Props<Token, MarketPair> {
     top: boolean;
     thisToken: Token;
     otherToken: Token;

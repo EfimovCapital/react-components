@@ -14,7 +14,7 @@
         width: 200px;
 
         @media(min-width: $min-md) {
-            width: 500px;
+            width: 400px;
         }
 
         margin: 0;
@@ -66,6 +66,8 @@
         }
 
         svg {
+            height: 30px;
+
             .ren-logo {
                 fill: themed('logo');
             }
@@ -76,7 +78,7 @@
         width: 200px;
 
         @media(min-width: $min-md) {
-            width: 500px;
+            width: 400px;
         }
     }
 
@@ -195,9 +197,5 @@
         img {
             margin-bottom: -1px;
         }
-    }
-
-    .header--dropdown--currency {
-        @extend .header--dropdown--options;
     }
 }

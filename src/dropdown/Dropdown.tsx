@@ -33,7 +33,7 @@ export class Dropdown extends React.Component<Props, State> {
                 <span>{selected.render}</span><Chevron style={{ opacity: 0.6 }} />
             </div>
             {shown ?
-                <div className="header--dropdown--spacing header--dropdown--currency">
+                <div className="header--dropdown--spacing header--dropdown--options">
                     <ul className="header--dropdown">
                         {
                             OrderedMap(options).map((render, value) => <li
@@ -146,7 +146,7 @@ interface Props {
 //             <span>{selected.render}</span><Chevron style={{ opacity: 0.6 }} />
 //         </div>
 //         {shown ?
-//             <div className="header--dropdown--spacing header--dropdown--currency">
+//             <div className="header--dropdown--spacing header--dropdown--options">
 //                 <ul className="header--dropdown">
 //                     {
 //                         OrderedMap(options).map((render, value) => <li

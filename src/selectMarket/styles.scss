@@ -1,4 +1,4 @@
-@import '../styles/common';
+@import '../styles/variables';
 
 .select--market {
 
@@ -57,7 +57,7 @@
     .Select--currency__value,
     .Select--currency__single-value {
         color: $mid-grey;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 16px;
         display: flex !important;
         align-items: center !important;

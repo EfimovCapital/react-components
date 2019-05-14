@@ -22,6 +22,7 @@ const examples = {
   },
   combined: {
     selectMarket: [require("./selectMarket/examples/1").default],
+    tokenValueInput: [require("./tokenValueInput/examples/1").default],
   }
 }
 

@@ -7,10 +7,10 @@ $light-grey: #cccccc;
 $dark-grey: #3f3f41;
 
 $light-green: #31CC9A;
-$green: #00a500;
+$green: #00a400;
 $light-red: #F16262;
 $red: #F04545;
-$orange: #db6500;
+$orange: #db6400;
 $yellow: rgb(244, 183, 50);
 
 $navy: rgba(0, 28, 58, 1);
@@ -29,17 +29,17 @@ $cubic-bezier: cubic-bezier(0.8, 0, 0.2, 1);
 $column-border-radius: 16px;
 
 $themes: (light:(background: #fcfcfd,
-foreground: $mid-grey,
-logo: #212122,
-beta: $blue-bright,
-toggle: 0.4,
-),
-dark: (background: $blue-darker,
-foreground: white,
-logo: white,
-beta: white,
-toggle: 1,
-), );
+        foreground: $mid-grey,
+        logo: #212122,
+        beta: $blue-bright,
+        toggle: 0.4,
+    ),
+    dark: (background: $blue-darker,
+        foreground: white,
+        logo: white,
+        beta: white,
+        toggle: 1,
+    ), );
 
 @mixin themify($themes: $themes) {
     .themed-app {
@@ -66,4 +66,10 @@ toggle: 1,
 
 @function themed($key) {
     @return map-get($theme-map, $key);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    /* remove scrollbar space */
+    width: 0px;
+    height: 0px;
 }

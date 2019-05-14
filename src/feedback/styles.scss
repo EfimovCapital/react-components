@@ -1,4 +1,4 @@
-@import '../styles/common';
+@import '../styles/variables';
 
 .feedbackButton {
     background: $blue-bright;
@@ -33,7 +33,7 @@
     width: 100px;
     transform: translateX(-50%);
     color: white;
-    font-weight: 500;
+    font-weight: 400;
     background: linear-gradient(180deg, #00A8F5 -201.77%, $blue-bright 93.76%);
     padding: 10px 20px;
     border-radius: 8px;

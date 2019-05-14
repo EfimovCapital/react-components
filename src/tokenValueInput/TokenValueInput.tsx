@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { InfoLabel } from "../infoLabel/InfoLabel";
 
+import "./styles.scss";
+
 const calculateStep = (valueIn: string | null) => {
     if (valueIn === "0" || !valueIn) {
         return 0.1;
