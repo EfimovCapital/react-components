@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { TokenIcon } from "../TokenIcon";
 
-export default () => <>
+export default () => <div style={{ padding: "10px" }}>
     <p><TokenIcon token={"BTC"} /> BTC</p>
     <p><TokenIcon token={"DAI"} /> DAI</p>
     <p><TokenIcon token={"DGX"} /> DGX</p>
@@ -13,4 +13,4 @@ export default () => <>
     <p><TokenIcon token={"WBTC"} /> WBTC</p>
     <p><TokenIcon token={"ZEC"} /> ZEC</p>
     <p><TokenIcon token={"ZRX"} /> ZRX</p>
-</>;
+</div>;

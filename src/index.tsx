@@ -1,12 +1,12 @@
 import * as React from "react";
-import { render } from "react-dom";
-import { HashRouter, Route, Link } from "react-router-dom";
 
-import reactElementToJSXString from 'react-element-to-jsx-string';
+import { render } from "react-dom";
+import { HashRouter, Link, Route } from "react-router-dom";
+import reactElementToJSXString from "react-element-to-jsx-string";
 
 import "./styles/examples.scss";
 
-const titled = (s: string) => s.replace(/([A-Z])/, " $1").replace(/^[a-z]/, (l) => l.toUpperCase());
+const titled = (s: string) => s.replace(/([A-Z])/g, " $1").replace(/^[a-z]/, (l) => l.toUpperCase());
 
 const examples = {
   basic: {
@@ -16,7 +16,8 @@ const examples = {
     infoLabel: [require("./infoLabel/examples/1").default],
     loading: [require("./loading/examples/1").default],
     searchField: [require("./searchField/examples/1").default],
-    tokenIcon: [require("./tokenIcon/examples/1").default],
+    tokenIcons: [require("./tokenIcon/examples/1").default],
+    tokenIconsWhite: [require("./tokenIcon/examples/2").default],
     feedback: [require("./feedback/examples/1").default],
     dropdown: [require("./dropdown/examples/1").default],
   },

@@ -1,39 +1,71 @@
 import * as React from "react";
 
 import { ReactComponent as Info } from "../infoLabel/info.svg";
-import { ReactComponent as BTC } from "./icons/btc.svg";
-import { ReactComponent as DAI } from "./icons/dai.svg";
-import { ReactComponent as DGX } from "./icons/dgx.svg";
-import { ReactComponent as ETH } from "./icons/eth.svg";
-import { ReactComponent as OMG } from "./icons/omg.svg";
-import { ReactComponent as REN } from "./icons/ren.svg";
-import { ReactComponent as TUSD } from "./icons/tusd.svg";
-import { ReactComponent as WBTC } from "./icons/wbtc.svg";
-import { ReactComponent as ZEC } from "./icons/zec.svg";
-import { ReactComponent as ZRX } from "./icons/zrx.svg";
-
+// Color icons
+import { ReactComponent as ColorBTC } from "./icons/color/btc.svg";
+import { ReactComponent as ColorDAI } from "./icons/color/dai.svg";
+import { ReactComponent as ColorDGX } from "./icons/color/dgx.svg";
+import { ReactComponent as ColorETH } from "./icons/color/eth.svg";
+import { ReactComponent as ColorOMG } from "./icons/color/omg.svg";
+import { ReactComponent as ColorREN } from "./icons/color/ren.svg";
+import { ReactComponent as ColorTUSD } from "./icons/color/tusd.svg";
+import { ReactComponent as ColorWBTC } from "./icons/color/wbtc.svg";
+import { ReactComponent as ColorZEC } from "./icons/color/zec.svg";
+import { ReactComponent as ColorZRX } from "./icons/color/zrx.svg";
+// White icons
+import { ReactComponent as WhiteBTC } from "./icons/white/btc.svg";
+import { ReactComponent as WhiteDAI } from "./icons/white/dai.svg";
+import { ReactComponent as WhiteDGX } from "./icons/white/dgx.svg";
+import { ReactComponent as WhiteETH } from "./icons/white/eth.svg";
+import { ReactComponent as WhiteGUSD } from "./icons/white/gusd.svg";
+import { ReactComponent as WhiteOMG } from "./icons/white/omg.svg";
+import { ReactComponent as WhitePAX } from "./icons/white/pax.svg";
+import { ReactComponent as WhiteREN } from "./icons/white/ren.svg";
+import { ReactComponent as WhiteTUSD } from "./icons/white/tusd.svg";
+import { ReactComponent as WhiteUSDT } from "./icons/white/usdt.svg";
+import { ReactComponent as WhiteWBTC } from "./icons/white/wbtc.svg";
+import { ReactComponent as WhiteZEC } from "./icons/white/zec.svg";
+import { ReactComponent as WhiteZRX } from "./icons/white/zrx.svg";
 import "./styles.scss";
 
 const icons = {
-  BTC: BTC,
-  DAI: DAI,
-  DGX: DGX,
-  ETH: ETH,
-  OMG: OMG,
-  REN: REN,
-  TUSD: TUSD,
-  WBTC: WBTC,
-  ZEC: ZEC,
-  ZRX: ZRX
+  color: {
+    BTC: ColorBTC,
+    DAI: ColorDAI,
+    DGX: ColorDGX,
+    ETH: ColorETH,
+    OMG: ColorOMG,
+    REN: ColorREN,
+    TUSD: ColorTUSD,
+    WBTC: ColorWBTC,
+    ZEC: ColorZEC,
+    ZRX: ColorZRX,
+  },
+  white: {
+    BTC: WhiteBTC,
+    DAI: WhiteDAI,
+    DGX: WhiteDGX,
+    ETH: WhiteETH,
+    OMG: WhiteOMG,
+    REN: WhiteREN,
+    TUSD: WhiteTUSD,
+    WBTC: WhiteWBTC,
+    ZEC: WhiteZEC,
+    ZRX: WhiteZRX,
+    GUSD: WhiteGUSD,
+    PAX: WhitePAX,
+    USDT: WhiteUSDT,
+  }
 };
 
 export class TokenIcon extends React.Component<Props, State> {
   public render = (): JSX.Element => {
-    const { token, className } = this.props;
+    const { token, className, white } = this.props;
     let image;
-    if (icons[token]) {
+    const color = white ? "white" : "color";
+    if (icons[color][token]) {
       // tslint:disable-next-line: non-literal-require
-      image = icons[token];
+      image = icons[color][token];
     } else {
       image = Info;
     }
@@ -54,6 +86,7 @@ export class TokenIcon extends React.Component<Props, State> {
 
 interface Props {
   token: string;
+  white?: boolean;
   className?: string;
 }
 
