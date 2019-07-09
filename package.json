@@ -1,5 +1,5 @@
 {
-  "name": "@renex/react-components",
+  "name": "@renproject/react-components",
   "version": "1.0.22",
   "description": "",
   "author": "renproject",
@@ -10,6 +10,9 @@
   "jsnext:main": "dist/lib.es.js",
   "types": "dist/lib.d.ts",
   "homepage": "https://renproject.github.io/react-components",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=8",
     "npm": ">=5"
