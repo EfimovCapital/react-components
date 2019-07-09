@@ -41,33 +41,6 @@ $themes: (light:(background: #fcfcfd,
         toggle: 1,
     ), );
 
-@mixin themify($themes: $themes) {
-    .themed-app {
-
-        @each $theme,
-        $map in $themes {
-
-            .theme-#{$theme} & {
-                $theme-map: () !global;
-
-                @each $key,
-                $subMap in $map {
-                    $value: map-get(map-get($themes, $theme), '#{$key}');
-                    $theme-map: map-merge($theme-map, ($key: $value)) !global;
-                }
-
-                @content;
-                $theme-map: null !global;
-            }
-
-        }
-    }
-}
-
-@function themed($key) {
-    @return map-get($theme-map, $key);
-}
-
 .hide-scrollbar::-webkit-scrollbar {
     /* remove scrollbar space */
     width: 0px;

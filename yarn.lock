@@ -1225,10 +1225,10 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
-"@renex/fonts@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@renex/fonts/-/fonts-1.0.1.tgz#7967434b343d5cd31c575b633997677f33f6856c"
-  integrity sha512-MXYgG1HVzILdXIzLC17ln33o6MU8p+wDjPmbKgvKpQGJNaT1eflhj078f+ha/VQ2IMs8B5PNZU1X9mDL4enMgQ==
+"@renproject/fonts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@renproject/fonts/-/fonts-1.0.0.tgz#5c6fa0b2354486a4e9fc46cb503982db75a8e082"
+  integrity sha512-4AyLi6kkOe1APAtFzTWgAsy4Q3fZYmzAb7its5W4LMXN3oW+ci4eytWEVkuIwrr7LZEGnRDFAT2g6bZeyL6SQg==
 
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"

@@ -29,7 +29,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-brands-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@renex/fonts": "^1.0.1",
+    "@renproject/fonts": "^1.0.0",
     "emotion": "^10.0.9",
     "immutable": "^4.0.0-rc.12",
     "moment": "^2.24.0",

@@ -3,7 +3,6 @@ import * as React from "react";
 import { OrderedMap } from "immutable";
 
 import { ReactComponent as Chevron } from "./icon-dropdown.svg";
-
 import "./styles.scss";
 
 // tslint:disable: react-unused-props-and-state
@@ -59,7 +58,6 @@ export class Dropdown extends React.Component<Props, State> {
 
     private readonly clickAway = (event: any) => {
         // tslint:disable-next-line: no-any
-        console.log("!");
         if ((this.ref && !this.ref.contains(event.target))) {
             this.setState({ shown: false });
         }
@@ -74,7 +72,6 @@ export class Dropdown extends React.Component<Props, State> {
         if (newShown) {
             document.addEventListener("mousedown", this.clickAway);
         } else {
-            console.log("removeEventListener");
             document.removeEventListener("mousedown", this.clickAway);
         }
     }
