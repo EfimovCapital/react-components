@@ -15,12 +15,11 @@
 
     height: 40px;
 
-    font-weight: 400; // originally 400
+    font-weight: 500;
     font-size: 14px;
     text-align: center;
 
     color: #FFFFFF;
-    font-weight: 600;
 
     transition: opacity 0.4s ease-in-out;
 
@@ -44,7 +43,7 @@
     @extend .button;
     background: white;
     color: $blue-bright;
-    font-weight: 400;
+    font-weight: 200; // originally 400
 
     &:disabled {
         color: $blue-bright;

@@ -5,6 +5,9 @@ $icon-size: 16px;
     vertical-align: middle;
     margin-left: 5px;
     position: relative;
+
+    padding: 5px;
+    margin-top: -5px;
 }
 
 .label--icon {
@@ -15,13 +18,15 @@ $icon-size: 16px;
     cursor: pointer;
 }
 
-.label--icon:hover+.label--message {
-    display: block;
+.label:hover {
+    .label--message {
+        display: block;
+    }
 }
 
 .label--message {
     margin-left: $icon-size / 2;
-    margin-top: -28px;
+    margin-top: -26px;
     display: none;
     font-weight: normal;
     line-height: 1.4;

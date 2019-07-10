@@ -1,6 +1,8 @@
 @import '../styles/variables';
 
 .token-value {
+    height: 128px;
+
     .select--market {
         width: 150px;
         margin-bottom: 10px;
@@ -20,7 +22,7 @@
         border: none;
         background: none;
         font-size: 22px;
-        font-weight: 400;
+        font-weight: 200; // originally 400
         line-height: normal;
         color: $mid-grey;
 
@@ -29,6 +31,14 @@
         &::placeholder {
             color: $mid-grey;
             opacity: 0.55;
+        }
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0;
         }
     }
 
@@ -114,16 +124,12 @@
 
 .order-value--title {
     display: flex;
-    font-weight: 400;
+    font-weight: 200; // originally 400
     font-size: 15px;
     color: $mid-grey;
-
-    .label {
-        margin-top: 2.5px;
-    }
 }
 
 .order-value--subtext {
     text-align: right;
-    font-weight: 400;
+    font-weight: 200; // originally 400
 }

@@ -57,7 +57,7 @@
     .Select--currency__value,
     .Select--currency__single-value {
         color: $mid-grey;
-        font-weight: 400;
+        font-weight: 200; // originally 400
         font-size: 16px;
         display: flex !important;
         align-items: center !important;

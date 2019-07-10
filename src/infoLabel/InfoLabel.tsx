@@ -1,8 +1,7 @@
 import * as React from "react";
 
-import "./styles.scss";
-
 import { ReactComponent as Info } from "./info.svg";
+import "./styles.scss";
 import { ReactComponent as Warning } from "./warning.svg";
 
 export enum LabelLevel {
