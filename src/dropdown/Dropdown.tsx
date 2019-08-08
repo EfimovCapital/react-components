@@ -6,7 +6,7 @@ import { ReactComponent as Chevron } from "./icon-dropdown.svg";
 import "./styles.scss";
 
 // tslint:disable: react-unused-props-and-state
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     selected: { value: string, render: React.ReactNode };
     options: Map<string, React.ReactNode>;
     setValue(value: string): void;
@@ -23,9 +23,10 @@ export class Dropdown extends React.Component<Props, State> {
 
     public render = () => {
         const { shown } = this.state;
-        const { selected, options } = this.props;
+        const { selected, options, className, ...props } = this.props;
         return <div
-            className="header--group"
+            {...props}
+            className={["header--group", className].join(" ")}
             ref={this.setRef}
         >
             <div className="header--selected" role="menuitem" onClick={this.toggle}>
@@ -39,9 +40,7 @@ export class Dropdown extends React.Component<Props, State> {
                                 key={value}
                                 role="button"
                                 data-id={value}
-                                className={`${value === selected.value ?
-                                    "header--dropdown--selected" :
-                                    ""} header--dropdown--option`}
+                                className={[value === selected.value ? "header--dropdown--selected" : "", "header--dropdown--option"].join(" ")}
                                 onClick={this.onClick}
                             >
                                 {render}
@@ -89,13 +88,6 @@ export class Dropdown extends React.Component<Props, State> {
 
 interface State {
     shown: boolean;
-}
-
-// tslint:disable: react-unused-props-and-state
-interface Props {
-    selected: { value: string, render: React.ReactNode },
-    options: Map<string, React.ReactNode>,
-    setValue(value: string): void;
 }
 
 

@@ -1,12 +1,10 @@
 import * as React from "react";
 
-import { TokenValueInput } from "../TokenValueInput";
-import { CurrencyIcon, SelectMarket } from "../../lib";
-
-import arrow from "./arrow.svg";
 import { Currency } from "../../currencyIcon/CurrencyIcon";
-
+import { CurrencyIcon, SelectMarket } from "../../lib";
+import { TokenValueInput } from "../TokenValueInput";
 import "./1.scss";
+import arrow from "./arrow.svg";
 
 type Token = string;
 type MarketPair = string;
@@ -68,7 +66,7 @@ export default () => {
         otherToken={bottom}
         allTokens={Tokens}
         key={"top"}
-        onChange={setTop}
+        onMarketChange={setTop}
         getMarket={getMarket}
     />
     const bottomSelect = <SelectMarket
@@ -77,7 +75,7 @@ export default () => {
         otherToken={top}
         allTokens={Tokens}
         key={"bottom"}
-        onChange={setBottom}
+        onMarketChange={setBottom}
         getMarket={getMarket}
     />;
 
@@ -90,7 +88,7 @@ export default () => {
         </>}
         hint={null}
         error={false}
-        onChange={setValue}
+        onValueChange={setValue}
     >
         {topSelect}
     </TokenValueInput >;
@@ -101,7 +99,7 @@ export default () => {
         subtext={"Reversed value"}
         hint={"This is the same but reversed"}
         error={false}
-        onChange={null}
+        onValueChange={null}
         className="order-inputs--second"
     >
         {bottomSelect}

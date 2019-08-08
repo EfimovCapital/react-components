@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { ReactComponent as Magnify } from "./magnify.svg";
-
 import "./styles.scss";
 
 export class SearchField extends React.Component<Props> {
@@ -10,9 +9,9 @@ export class SearchField extends React.Component<Props> {
      * @dev Should have minimal computation, loops and anonymous functions.
      */
     public render(): React.ReactNode {
-        const { className, value, placeholder, autoFocus } = this.props;
+        const { value, placeholder, autoFocus, className, ...props } = this.props;
 
-        return <div className={`search-bar ${className ? className : ""}`}>
+        return <div {...props} className={["search-bar", className ? className : ""].join(" ")}>
             <Magnify className="search-bar--icon" />
             <input
                 type="text"
@@ -27,16 +26,15 @@ export class SearchField extends React.Component<Props> {
 
     private readonly handleInput = (event: React.FormEvent<HTMLInputElement>): void => {
         const element = (event.target as HTMLInputElement);
-        this.props.onChange(element.value);
+        this.props.onSearchChange(element.value);
     }
 }
 
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     value: string;
     placeholder: string;
-    className?: string;
     autoFocus?: boolean;
-    onChange(input: string): void;
+    onSearchChange(input: string): void;
 }
 
 export const escapeRegExp = (text: string) => {

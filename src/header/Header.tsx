@@ -5,8 +5,8 @@ import "./styles.scss";
 /**
  * Header is a visual component providing page branding and navigation.
  */
-export const Header = ({ logo, menu }: Props) =>
-    <div className="header">
+export const Header = ({ logo, menu, className, ...props }: Props) =>
+    <div {...props} className={["header", className].join(" ")}>
         <div className="container">
             <div className="header--logo">
                 {logo}
@@ -18,7 +18,7 @@ export const Header = ({ logo, menu }: Props) =>
     </div>;
 
 // tslint:disable: react-unused-props-and-state
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     logo: React.ReactNode;
     menu: React.ReactNode[];
 }

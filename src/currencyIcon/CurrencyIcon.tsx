@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { faBitcoin, faEthereum } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon, Props as FAProps } from "@fortawesome/react-fontawesome";
 
 export enum Currency {
     AUD = "aud",
@@ -31,42 +31,34 @@ export const currencies = [
     { currency: Currency.BTC, description: "Bitcoin (BTC)", },
 ];
 
-export class CurrencyIcon extends React.Component<Props, State> {
-    public render = (): JSX.Element => {
-        const { currency } = this.props;
+export const CurrencyIcon = ({ currency, className, ...props }: Props) => {
+    // Note: Typescript will warn if the switch statement is non-exhaustive
 
-        // Note: Typescript will warn if the switch statement is non-exhaustive
-
-        // tslint:disable-next-line: switch-default
-        switch (currency) {
-            case Currency.AUD:
-                return <>$</>;
-            case Currency.CNY:
-                return <>¥</>;
-            case Currency.GBP:
-                return <>£</>;
-            case Currency.EUR:
-                return <>€</>;
-            case Currency.JPY:
-                return <>¥</>;
-            case Currency.KRW:
-                return <>₩</>;
-            case Currency.RUB:
-                return <>₽</>;
-            case Currency.USD:
-                return <>$</>;
-            case Currency.ETH:
-                return <FontAwesomeIcon className="currency-icon" icon={faEthereum} />;
-            case Currency.BTC:
-                return <FontAwesomeIcon className="currency-icon" icon={faBitcoin} />;
-        }
-
+    // tslint:disable-next-line: switch-default
+    switch (currency) {
+        case Currency.AUD:
+            return <>$</>;
+        case Currency.CNY:
+            return <>¥</>;
+        case Currency.GBP:
+            return <>£</>;
+        case Currency.EUR:
+            return <>€</>;
+        case Currency.JPY:
+            return <>¥</>;
+        case Currency.KRW:
+            return <>₩</>;
+        case Currency.RUB:
+            return <>₽</>;
+        case Currency.USD:
+            return <>$</>;
+        case Currency.ETH:
+            return <FontAwesomeIcon {...props} className={["currency-icon", className].join(" ")} icon={faEthereum} />;
+        case Currency.BTC:
+            return <FontAwesomeIcon {...props} className={["currency-icon", className].join(" ")} icon={faBitcoin} />;
     }
 }
 
-interface Props {
+interface Props extends Partial<FAProps> {
     currency: Currency;
-}
-
-interface State {
 }

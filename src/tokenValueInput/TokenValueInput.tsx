@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { InfoLabel } from "../infoLabel/InfoLabel";
-
 import "./styles.scss";
 
 const calculateStep = (valueIn: string | null) => {
@@ -36,16 +35,16 @@ export class TokenValueInput extends React.Component<Props> {
      * @dev Should have minimal computation, loops and anonymous functions.
      */
     public render(): React.ReactNode {
-        const { title, hint, value, subtext, error, onChange, className } = this.props;
+        const { title, hint, value, subtext, error, onValueChange, className } = this.props;
 
-        const disabled = onChange === null;
-        return <div className={`token-value ${className || ""}`}>
+        const disabled = onValueChange === null;
+        return <div className={["token-value", className].join(" ")}>
             <div className="token-value--left">
                 <div className="order-value--title">
                     <span>{title}</span>
                     {hint && <InfoLabel>{hint}</InfoLabel>}
                 </div>
-                <span className={`token-value--item ${disabled ? "disabled" : ""} ${error ? "token-value--item--error" : ""}`}>
+                <span className={["token-value--item", disabled ? "disabled" : "", error ? "token-value--item--error" : ""].join(" ")}>
                     <input
                         value={value === null ? "" : value}
                         type="number"
@@ -74,28 +73,27 @@ export class TokenValueInput extends React.Component<Props> {
     }
 
     private readonly handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-        if (this.props.onChange) {
+        if (this.props.onValueChange) {
             const element = (event.target as HTMLInputElement);
             const value = element.value;
-            this.props.onChange(value, { blur: false });
+            this.props.onValueChange(value, { blur: false });
         }
     }
 
     private readonly handleBlur = (event: React.FormEvent<HTMLInputElement>) => {
-        if (this.props.onChange) {
+        if (this.props.onValueChange) {
             const element = (event.target as HTMLInputElement);
             const value = element.value;
-            this.props.onChange(value, { blur: true });
+            this.props.onValueChange(value, { blur: true });
         }
     }
 }
 
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     title: string;
     value: string | null;
     subtext: React.ReactNode;
     hint: string | null;
     error: boolean;
-    onChange: ((newValue: string, options: { blur: boolean }) => void) | null;
-    className?: string;
+    onValueChange: ((newValue: string, options: { blur: boolean }) => void) | null;
 }

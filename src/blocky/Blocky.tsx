@@ -187,10 +187,10 @@ export class Blocky extends React.Component<Props, State> {
     }
 
     public render = (): JSX.Element => {
-        const { address } = this.props;
+        const { address, fgColor, bgColor, spotColor, ...props } = this.props;
         const { loading } = this.state;
         return (
-            <div className="blocky--outer">
+            <div {...props} className={["blocky--outer", this.props.className].join(" ")}>
                 <div data-tip={address || "..."}>
                     {loading ? <i className="fa fa-spin fa-spinner blocky__loading" /> : <i />}
                     <canvas className="blocky" ref={canvas => this.canvas = canvas} />
@@ -200,7 +200,7 @@ export class Blocky extends React.Component<Props, State> {
     }
 }
 
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     address: string | null;
     fgColor?: string,
     bgColor?: string,

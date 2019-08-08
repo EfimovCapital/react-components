@@ -58,36 +58,16 @@ const icons = {
   }
 };
 
-export class TokenIcon extends React.Component<Props, State> {
-  public render = (): JSX.Element => {
-    const { token, className, white } = this.props;
-    let image;
-    const color = white ? "white" : "color";
-    if (icons[color][token]) {
-      // tslint:disable-next-line: non-literal-require
-      image = icons[color][token];
-    } else {
-      image = Info;
+export const TokenIcon = ({ token, white, className, ...props }: Props): JSX.Element =>
+  React.createElement(
+    icons[white ? "white" : "color"][token] || Info,
+    {
+      ...props,
+      className: ["token--icon", className ? className : ""].join(" "),
     }
+  );
 
-    return React.createElement(image, {
-      className: `token--icon ${className ? className : ""}`
-    });
-    // return (
-    //   <img
-    //     alt=""
-    //     role="presentation"
-    //     className={`token--icon ${className ? className : ""}`}
-    //     src={image}
-    //   />
-    // );
-  };
-}
-
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   token: string;
   white?: boolean;
-  className?: string;
 }
-
-interface State { }

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { SearchField, escapeRegExp } from "../SearchField";
+import { escapeRegExp, SearchField } from "../SearchField";
 
 export default () => {
     const [searchInput, setSearchInput] = React.useState("")
@@ -17,7 +17,7 @@ export default () => {
     }
 
     return <div>
-        <SearchField placeholder="Search words" onChange={setSearchInput} value={searchInput} autoFocus={true} />
+        <SearchField placeholder="Search words" onSearchChange={setSearchInput} value={searchInput} autoFocus={true} />
         {generateRows()}
     </div>;
 }

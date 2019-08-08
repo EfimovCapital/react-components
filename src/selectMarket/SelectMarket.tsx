@@ -2,9 +2,8 @@ import * as React from "react";
 
 import Select from "react-select";
 
+import { CustomGroup, CustomOption, CustomValue, OptionType } from "./Select";
 import "./styles.scss";
-
-import { CustomOption, CustomValue, OptionType, CustomGroup } from "./Select";
 
 /**
  * SelectMarket allows the user to select a market from two token dropdowns
@@ -17,7 +16,7 @@ export class SelectMarket<Token extends string, MarketPair extends string> exten
      */
     public render(): React.ReactNode {
         // Retrieve the order inputs from the store.
-        const { thisToken, otherToken, top } = this.props;
+        const { top, thisToken, otherToken, allTokens, onMarketChange, getMarket, className, ...props } = this.props;
         const customStyles = {
             // tslint:disable-next-line: no-any
             option: (provided: any, state: any) => ({
@@ -33,7 +32,7 @@ export class SelectMarket<Token extends string, MarketPair extends string> exten
             const leftCurrencies = this.listCurrencies();
 
             return (
-                <div className="select--market">
+                <div {...props} className={["select--market", className].join(" ")}>
                     <Select
                         className="Select--currency"
                         classNamePrefix="Select--currency"
@@ -62,7 +61,7 @@ export class SelectMarket<Token extends string, MarketPair extends string> exten
             }
             const error = !this.props.getMarket(otherToken, thisToken);
 
-            return <div className={`select--market select--market--second ${error ? "select--market--error" : ""}`}>
+            return <div className={["select--market", "select--market--second", error ? "select--market--error" : ""].join(" ")}>
                 <Select
                     className="Select--currency"
                     classNamePrefix="Select--currency"
@@ -87,7 +86,7 @@ export class SelectMarket<Token extends string, MarketPair extends string> exten
     // tslint:disable-next-line:no-any
     private readonly handleChange = (event: any): void => {
         const newToken = event.value;
-        this.props.onChange(newToken);
+        this.props.onMarketChange(newToken);
     }
 
     private readonly listCurrencies = (): OptionType[] => {
@@ -136,13 +135,12 @@ export class SelectMarket<Token extends string, MarketPair extends string> exten
     }
 }
 
-interface Props<Token, MarketPair> {
+interface Props<Token, MarketPair> extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     top: boolean;
     thisToken: Token;
     otherToken: Token;
-    // tslint:disable-next-line: no-reserved-keywords
     allTokens: Map<Token, { name: string; symbol: string }>;
-    onChange(token: Token): void;
+    onMarketChange(token: Token): void;
     getMarket(left: Token, right: Token): MarketPair | undefined;
 }
 

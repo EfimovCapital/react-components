@@ -3,9 +3,9 @@ import * as React from "react";
 import { css } from "emotion";
 import { OptionProps } from "react-select/lib/components/Option";
 import { SingleValueProps } from "react-select/lib/components/SingleValue";
+import { GroupProps } from "react-select/lib/components/Group";
 
 import { TokenIcon } from "../tokenIcon/TokenIcon";
-import { GroupProps } from "react-select/lib/components/Group";
 
 export interface OptionType {
     label: string;
@@ -52,7 +52,7 @@ export const CustomOption = <X extends OptionType>(props: OptionProps<X>) => {
     return (
         <div
             ref={innerRef}
-            className={`${cx(
+            className={[cx(
                 css(getStyles("option", props)),
                 {
                     option: true,
@@ -61,7 +61,7 @@ export const CustomOption = <X extends OptionType>(props: OptionProps<X>) => {
                     "option--is-selected": isSelected,
                 },
                 className
-            ) || ""} ${isSelected ? "Select--currency__option--selected" : ""}`}
+            ), isSelected ? "Select--currency__option--selected" : ""].join(" ")}
             {...innerProps}
         >
             <TokenIcon token={option.value} />
@@ -82,11 +82,11 @@ export const CustomGroup = <X extends OptionType>(props: GroupProps<X>) => {
     } = props;
     return (
         <div
-            className={`${cx(
+            className={[cx(
                 css(getStyles('group', props)),
                 { 'group': true },
                 className,
-            ) || ""} ${label === "Not Available" ? "Select--currency__group--disabled" : ""}`}
+            ), label === "Not Available" ? "Select--currency__group--disabled" : ""].join(" ")}
         >
             <Heading
                 {...props}

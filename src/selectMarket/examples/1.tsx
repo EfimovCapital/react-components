@@ -51,7 +51,7 @@ export default () => {
       otherToken={bottom}
       allTokens={Tokens}
       key={"top"}
-      onChange={setTop}
+      onMarketChange={setTop}
       getMarket={getMarket}
     />
     <SelectMarket
@@ -60,7 +60,7 @@ export default () => {
       otherToken={top}
       allTokens={Tokens}
       key={"bottom"}
-      onChange={setBottom}
+      onMarketChange={setBottom}
       getMarket={getMarket}
     />
   </div>;

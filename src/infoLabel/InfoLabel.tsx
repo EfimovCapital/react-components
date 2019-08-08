@@ -19,10 +19,10 @@ export class InfoLabel extends React.Component<Props, State> {
      * @dev Should have minimal computation, loops and anonymous functions.
      */
     public render(): React.ReactNode {
-        const { level, children } = this.props;
+        const { level, children, className, ...props } = this.props;
         const icon = level === LabelLevel.Warning ? <Warning className="label--icon" /> : <Info className="label--icon" />;
         return (
-            <div className="label">
+            <div {...props} className={[`label`, className].join(" ")}>
                 {icon}
                 <div className="label--message">{children ? children : ""}</div>
             </div>
@@ -30,7 +30,7 @@ export class InfoLabel extends React.Component<Props, State> {
     }
 }
 
-interface Props {
+interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     level?: LabelLevel;
     children?: React.ReactNode;
 }
