@@ -16,6 +16,7 @@ export const naturalTime = (
     options: {
         message: string;
         suffix?: string;
+        prefix?: string;
         countDown: boolean;
         showingSeconds?: boolean;
         abbreviate?: boolean;
@@ -33,32 +34,33 @@ export const naturalTime = (
     let seconds = diff.asSeconds();
 
     const suffix = options.suffix ? ` ${options.suffix}` : "";
+    const prefix = options.prefix ? `${options.prefix} ` : "";
+
 
     if (days > 2) {
         days = Math.round(days);
-        return `${days} ${days === 1 ? "day" : "days"}${suffix}`;
+        return `${prefix}${days} ${days === 1 ? "day" : "days"}${suffix}`;
     }
     if (hours >= 1) {
         // Round to the closest hour
         hours = Math.round(hours);
-        return `${hours} ${hours === 1 ? "hour" : "hours"}${suffix}`;
+        return `${prefix}${hours} ${hours === 1 ? "hour" : "hours"}${suffix}`;
     } else if (minutes >= 1) {
         minutes = Math.round(minutes);
         if (options.abbreviate) {
-            return `${minutes} ${minutes === 1 ? "min" : "mins"}${suffix}`;
+            return `${prefix}${minutes} ${minutes === 1 ? "min" : "mins"}${suffix}`;
         }
-        return `${minutes} ${minutes === 1 ? "minute" : "minutes"}${suffix}`;
+        return `${prefix}${minutes} ${minutes === 1 ? "minute" : "minutes"}${suffix}`;
     } else if (options.showingSeconds && seconds >= 1) {
         seconds = Math.floor(seconds);
         if (options.abbreviate) {
-            return `${seconds} ${seconds === 1 ? "sec" : "secs"}${suffix}`;
+            return `${prefix}${seconds} ${seconds === 1 ? "sec" : "secs"}${suffix}`;
         }
-        return `${seconds} ${seconds === 1 ? "second" : "seconds"}${suffix}`;
+        return `${prefix}${seconds} ${seconds === 1 ? "second" : "seconds"}${suffix}`;
     } else {
         return `${options.message}`;
     }
 };
-
 
 // Sleep for specified number of milliseconds
 // tslint:disable-next-line: no-string-based-set-timeout
