@@ -29,66 +29,6 @@ const calculateStep = (valueIn: string | null) => {
     return 10 ** stepE;
 };
 
-export class TokenValueInput extends React.Component<Props> {
-    /**
-     * The main render function.
-     * @dev Should have minimal computation, loops and anonymous functions.
-     */
-    public render(): React.ReactNode {
-        const { title, hint, value, subtext, error, onValueChange, className } = this.props;
-
-        const disabled = onValueChange === null;
-        return <div className={["token-value", className].join(" ")}>
-            <div className="token-value--left">
-                <div className="order-value--title">
-                    <span>{title}</span>
-                    {hint && <InfoLabel>{hint}</InfoLabel>}
-                </div>
-                <span className={["token-value--item", disabled ? "disabled" : "", error ? "token-value--item--error" : ""].join(" ")}>
-                    <input
-                        value={value === null ? "" : value}
-                        type="number"
-                        disabled={disabled}
-                        placeholder="0"
-                        min={0}
-                        step={calculateStep(value)}
-                        onChange={this.handleChange}
-                        onBlur={this.handleBlur}
-                    // onKeyDown={console.log}
-                    />
-                </span>
-            </div>
-
-            <div className="token-value--right">
-                {this.props.children}
-                <p className="order-value--subtext">
-                    {/* {error ? */}
-                    {/* <span className="order-value--warning"> */}
-                    {/* {error} */}
-                    {/* </span> : subtext} */}
-                    {subtext}
-                </p>
-            </div>
-        </div>;
-    }
-
-    private readonly handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-        if (this.props.onValueChange) {
-            const element = (event.target as HTMLInputElement);
-            const value = element.value;
-            this.props.onValueChange(value, { blur: false });
-        }
-    }
-
-    private readonly handleBlur = (event: React.FormEvent<HTMLInputElement>) => {
-        if (this.props.onValueChange) {
-            const element = (event.target as HTMLInputElement);
-            const value = element.value;
-            this.props.onValueChange(value, { blur: true });
-        }
-    }
-}
-
 interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     title: string;
     value: string | null;
@@ -96,4 +36,57 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
     hint: string | null;
     error: boolean;
     onValueChange: ((newValue: string, options: { blur: boolean }) => void) | null;
+}
+
+export const TokenValueInput = ({ title, hint, value, subtext, error, onValueChange, className, children }: Props) => {
+
+    const handleChange = React.useCallback((event: React.FormEvent<HTMLInputElement>) => {
+        if (onValueChange) {
+            const element = (event.target as HTMLInputElement);
+            const value = element.value;
+            onValueChange(value, { blur: false });
+        }
+    }, [onValueChange]);
+
+    const handleBlur = React.useCallback((event: React.FormEvent<HTMLInputElement>) => {
+        if (onValueChange) {
+            const element = (event.target as HTMLInputElement);
+            const value = element.value;
+            onValueChange(value, { blur: true });
+        }
+    }, [onValueChange]);
+
+    const disabled = onValueChange === null;
+    return <div className={["token-value", className].join(" ")}>
+        <div className="token-value--left">
+            <div className="order-value--title">
+                <span>{title}</span>
+                {hint && <InfoLabel>{hint}</InfoLabel>}
+            </div>
+            <span className={["token-value--item", disabled ? "disabled" : "", error ? "token-value--item--error" : ""].join(" ")}>
+                <input
+                    value={value === null ? "" : value}
+                    type="number"
+                    disabled={disabled}
+                    placeholder="0"
+                    min={0}
+                    step={calculateStep(value)}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                // onKeyDown={console.log}
+                />
+            </span>
+        </div>
+
+        <div className="token-value--right">
+            {children}
+            <p className="order-value--subtext">
+                {/* {error ? */}
+                {/* <span className="order-value--warning"> */}
+                {/* {error} */}
+                {/* </span> : subtext} */}
+                {subtext}
+            </p>
+        </div>
+    </div>;
 }

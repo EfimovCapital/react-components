@@ -1,6 +1,7 @@
 import * as React from "react";
+
+import { currencies, Currency, CurrencyIcon } from "../../currencyIcon/CurrencyIcon";
 import { Dropdown } from "../Dropdown";
-import { currencies, CurrencyIcon, Currency } from "../../currencyIcon/CurrencyIcon";
 
 const getCurrencyOptions = () => {
     const options = new Map<string, React.ReactNode>();

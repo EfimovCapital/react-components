@@ -11,6 +11,8 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElem
     options: Map<string, React.ReactNode>;
     setValue(value: string): void;
 }
+
+// (See commented out version with hooks below)
 export class Dropdown extends React.Component<Props, State> {
     private ref: HTMLDivElement | null = null;
 
@@ -23,7 +25,7 @@ export class Dropdown extends React.Component<Props, State> {
 
     public render = () => {
         const { shown } = this.state;
-        const { selected, options, className, ...props } = this.props;
+        const { selected, options, setValue, className, ...props } = this.props;
         return <div
             {...props}
             className={["header--group", className].join(" ")}
