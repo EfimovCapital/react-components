@@ -18,6 +18,7 @@ export { Dropdown } from "./dropdown/Dropdown";
 
 export {
     naturalTime,
+    alreadyPast,
     sleep,
     second,
     TimeMagnitude,

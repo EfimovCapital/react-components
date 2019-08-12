@@ -1,9 +1,9 @@
 import * as React from "react";
 
 import { css } from "emotion";
-import { OptionProps } from "react-select/lib/components/Option";
-import { SingleValueProps } from "react-select/lib/components/SingleValue";
-import { GroupProps } from "react-select/lib/components/Group";
+import { OptionProps } from "react-select/src/components/Option";
+import { SingleValueProps } from "react-select/src/components/SingleValue";
+import { GroupProps } from "react-select/src/components/Group";
 
 import { TokenIcon } from "../tokenIcon/TokenIcon";
 
