@@ -6,7 +6,8 @@ import { CustomGroup, CustomOption, CustomValue, OptionType } from "./Select";
 import "./styles.scss";
 
 interface Props<Token, MarketPair> extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    top: boolean;
+    top?: boolean;
+    bottom?: boolean;
     thisToken: Token;
     otherToken: Token;
     allTokens: Map<Token, { name: string; symbol: string }>;
@@ -17,7 +18,7 @@ interface Props<Token, MarketPair> extends React.DetailedHTMLProps<React.HTMLAtt
 /**
  * SelectMarket allows the user to select a market from two token dropdowns
  */
-export const SelectMarket = <Token extends string, MarketPair extends string>({ top, thisToken, otherToken, allTokens, onMarketChange, getMarket, className, ...props }: Props<Token, MarketPair>) => {
+export const SelectMarket = <Token extends string, MarketPair extends string>({ top, bottom, thisToken, otherToken, allTokens, onMarketChange, getMarket, className, ...props }: Props<Token, MarketPair>) => {
 
     // tslint:disable-next-line:no-any
     const handleChange = React.useCallback((event: any): void => {

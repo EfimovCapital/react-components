@@ -61,7 +61,7 @@ export default () => {
     </div>;
 
     const topSelect = <SelectMarket
-        top={true}
+        top
         thisToken={top}
         otherToken={bottom}
         allTokens={Tokens}
@@ -70,7 +70,7 @@ export default () => {
         getMarket={getMarket}
     />
     const bottomSelect = <SelectMarket
-        top={false}
+        bottom
         thisToken={bottom}
         otherToken={top}
         allTokens={Tokens}

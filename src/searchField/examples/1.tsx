@@ -17,7 +17,7 @@ export default () => {
     }
 
     return <div>
-        <SearchField placeholder="Search words" onSearchChange={setSearchInput} value={searchInput} autoFocus={true} />
+        <SearchField placeholder="Search words" onSearchChange={setSearchInput} value={searchInput} autoFocus />
         {generateRows()}
     </div>;
 }

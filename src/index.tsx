@@ -29,7 +29,7 @@ const examples = {
 
 function Home() {
   return Object.keys(examples).map(category =>
-    <details open={true}>
+    <details open>
       <summary>{titled(category)}</summary>
       <div className="example-group">
         {Object.keys(examples[category]).map(exampleGroup => {

@@ -7,7 +7,7 @@ export default () => <>
         <Loading />
     </div>
     <div style={{ background: "black", padding: "30px" }}>
-        <Loading alt={true} />
+        <Loading alt />
     </div>
 </>;
 
