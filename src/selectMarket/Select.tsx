@@ -1,6 +1,5 @@
 import * as React from "react";
 
-import { css } from "emotion";
 import { OptionProps } from "react-select/src/components/Option";
 import { SingleValueProps } from "react-select/src/components/SingleValue";
 import { GroupProps } from "react-select/src/components/Group";
@@ -19,20 +18,17 @@ export interface OptionType {
 }
 
 export const CustomValue = <X extends OptionType>(props: SingleValueProps<X>) => {
-    const { className, cx, getStyles, isDisabled, innerProps, children } = props;
-
+    const { children, className, cx, getStyles, isDisabled, innerProps } = props;
     const option = props.data;
-
     return (
         <div
-            className={cx(
-                // tslint:disable-next-line: no-any
-                css(getStyles("singleValue", props)),
+            css={getStyles('singleValue', props)}
+            className={(cx as any)(
                 {
-                    "single-value": true,
-                    "single-value--is-disabled": isDisabled
+                    'single-value': true,
+                    'single-value--is-disabled': isDisabled,
                 },
-                className
+                className,
             )}
             {...innerProps}
         >
@@ -45,29 +41,39 @@ export const CustomValue = <X extends OptionType>(props: SingleValueProps<X>) =>
 };
 
 export const CustomOption = <X extends OptionType>(props: OptionProps<X>) => {
-    const { children, className, cx, getStyles, isDisabled, isFocused, isSelected, innerRef, innerProps } = props;
-
+    const {
+        children,
+        className,
+        cx,
+        getStyles,
+        isDisabled,
+        isFocused,
+        isSelected,
+        innerRef,
+        innerProps,
+    } = props;
+    console.log(props);
+    console.log(props.isSelected);
     const option = props.data;
-
     return (
         <div
-            ref={innerRef}
-            className={[cx(
-                css(getStyles("option", props)),
+            style={getStyles('option', props)}
+            className={[(cx as any)(
                 {
                     option: true,
-                    "option--is-disabled": isDisabled,
-                    "option--is-focused": isFocused,
-                    "option--is-selected": isSelected,
+                    'option--is-disabled': isDisabled,
+                    'option--is-focused': isFocused,
+                    'option--is-selected': isSelected,
                 },
                 className
             ), isSelected ? "Select--currency__option--selected" : ""].join(" ")}
+            ref={innerRef}
             {...innerProps}
         >
             <TokenIcon token={option.value} />
             {children}
             <span>{option.name}</span>
-        </div >
+        </div>
     );
 };
 
@@ -79,17 +85,23 @@ export const CustomGroup = <X extends OptionType>(props: GroupProps<X>) => {
         getStyles,
         Heading,
         label,
+        selectProps,
     } = props;
+    const {
+        headingProps,
+        theme
+    } = props as any;
     return (
         <div
-            className={[cx(
-                css(getStyles('group', props)),
-                { 'group': true },
-                className,
-            ), label === "Not Available" ? "Select--currency__group--disabled" : ""].join(" ")}
+            style={getStyles('group', props)}
+            className={[(cx as any)({ group: true }, className), label === "Not Available" ? "Select--currency__group--disabled" : ""].join(" ")}
         >
             <Heading
-                {...props}
+                {...headingProps}
+                selectProps={selectProps}
+                theme={theme}
+                getStyles={getStyles}
+                cx={cx}
             >
                 {label}
             </Heading>

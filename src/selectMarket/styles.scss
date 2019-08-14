@@ -84,7 +84,8 @@
             border: 1px solid #DBE0E8;
             box-sizing: border-box;
             border-radius: 6px;
-            background-color: inherit;
+            background-color: white !important;
+            color: black !important;
         }
 
         &:hover {
