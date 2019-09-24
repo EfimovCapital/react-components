@@ -4,6 +4,7 @@ import { TokenIcon } from "../TokenIcon";
 
 export default () => <div style={{ background: "#333", color: "white", padding: "10px" }}>
     <p><TokenIcon token={"BTC"} white />BTC</p>
+    <p><TokenIcon token={"BCH"} white />BCH</p>
     <p><TokenIcon token={"DAI"} white />DAI</p>
     <p><TokenIcon token={"DGX"} white />DGX</p>
     <p><TokenIcon token={"ETH"} white />ETH</p>

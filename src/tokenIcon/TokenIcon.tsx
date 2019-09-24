@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { ReactComponent as Info } from "../infoLabel/info.svg";
 // Color icons
+import { ReactComponent as ColorBCH } from "./icons/color/bch.svg";
 import { ReactComponent as ColorBTC } from "./icons/color/btc.svg";
 import { ReactComponent as ColorDAI } from "./icons/color/dai.svg";
 import { ReactComponent as ColorDGX } from "./icons/color/dgx.svg";
@@ -13,6 +14,7 @@ import { ReactComponent as ColorWBTC } from "./icons/color/wbtc.svg";
 import { ReactComponent as ColorZEC } from "./icons/color/zec.svg";
 import { ReactComponent as ColorZRX } from "./icons/color/zrx.svg";
 // White icons
+import { ReactComponent as WhiteBCH } from "./icons/white/bch.svg";
 import { ReactComponent as WhiteBTC } from "./icons/white/btc.svg";
 import { ReactComponent as WhiteDAI } from "./icons/white/dai.svg";
 import { ReactComponent as WhiteDGX } from "./icons/white/dgx.svg";
@@ -31,6 +33,7 @@ import "./styles.scss";
 const icons = {
   color: {
     BTC: ColorBTC,
+    BCH: ColorBCH,
     DAI: ColorDAI,
     DGX: ColorDGX,
     ETH: ColorETH,
@@ -43,6 +46,7 @@ const icons = {
   },
   white: {
     BTC: WhiteBTC,
+    BCH: WhiteBCH,
     DAI: WhiteDAI,
     DGX: WhiteDGX,
     ETH: WhiteETH,
